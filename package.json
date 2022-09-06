@@ -1,0 +1,86 @@
+{
+  "name": "lapis",
+  "displayName": "Lapis",
+  "description": "A dark blue theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Lapis",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-color-theme.json"
+      },
+      {
+        "label": "Lapis Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Amethyst",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-amethyst-color-theme.json"
+      },
+      {
+        "label": "Lapis Amethyst Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-amethyst-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Ruby",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-ruby-color-theme.json"
+      },
+      {
+        "label": "Lapis Ruby Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-ruby-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Amber",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-amber-color-theme.json"
+      },
+      {
+        "label": "Lapis Amber Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-amber-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Peridot",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-peridot-color-theme.json"
+      },
+      {
+        "label": "Lapis Peridot Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-peridot-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Aquamarine",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-aquamarine-color-theme.json"
+      },
+      {
+        "label": "Lapis Aquamarine Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-aquamarine-stealth-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "ts-node ./src/index.ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.15",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2",
+    "vsce": "^2.11.0"
+  }
+}
