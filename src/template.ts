@@ -65,7 +65,7 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'editorInlayHint.foreground': `${base.selection}99`,
       'editorRuler.foreground': base.selection,
       'editorCodeLens.foreground': base.foreground,
-      'editorBracketMatch.background': `${base.selection}55`,
+      'editorBracketMatch.background': `${base.selection}60`,
       'editorBracketMatch.border': palette.lapis,
 
       // Editor Overview Ruler
@@ -166,7 +166,7 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       // Scrollbar
       'scrollbar.shadow': base.shadow,
       'scrollbarSlider.activeBackground': `${base.selection}50`,
-      'scrollbarSlider.background': `${base.selection}55`,
+      'scrollbarSlider.background': `${base.selection}60`,
       'scrollbarSlider.hoverBackground': `${base.selection}99`,
 
       // Badge
@@ -259,7 +259,7 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'merge.incomingContentBackground': `${palette.peridot}22`,
       'merge.border': base.selection,
       'merge.commonHeaderBackground': `${base.selection}70`,
-      'merge.commonContentBackground': `${base.selection}55`,
+      'merge.commonContentBackground': `${base.selection}60`,
 
       // Panel
       'panel.background': base.background,
