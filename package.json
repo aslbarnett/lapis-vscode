@@ -17,11 +17,27 @@
     "url": "https://github.com/aslbarnett/lapis-vscode/issues"
   },
   "icon": "images/logo.png",
+  "galleryBanner": {
+    "color": "#1B1F27",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.71.0"
   },
   "categories": [
     "Themes"
+  ],
+  "keywords": [
+    "dark theme",
+    "blue theme",
+    "themes",
+    "lapis",
+    "ruby",
+    "amethyst",
+    "peridot",
+    "quartz",
+    "amber",
+    "stealth"
   ],
   "contributes": {
     "themes": [

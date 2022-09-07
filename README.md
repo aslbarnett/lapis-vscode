@@ -6,7 +6,7 @@ A dark blue theme for VS Code.
 
 ![Screenshot](images/lapis-demo.png)
 
-A lower contrast option:
+A lower contrast option (stealth version):
 
 ![Screenshot](images/lapis-stealth-demo.png)
 
@@ -18,3 +18,4 @@ As well as accent color variations:
 ![Screenshot](images/lapis-peridot-demo.png)
 ![Screenshot](images/lapis-peridot-demo.png)
 ![Screenshot](images/lapis-aquamarine-demo.png)
+![Screenshot](images/lapis-quartz-demo.png)
