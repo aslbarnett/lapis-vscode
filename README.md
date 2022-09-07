@@ -18,3 +18,5 @@ As well as accent color variations:
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-peridot-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-aquamarine-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-quartz-demo.png)
+
+Inspired by Night Owl, Halcyon and Dracula.
