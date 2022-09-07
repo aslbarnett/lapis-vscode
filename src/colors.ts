@@ -16,7 +16,8 @@ export const palette = {
   ruby: '#fc83ab',
   amber: '#fcd483',
   peridot: '#abfc83',
-  aquamarine: '#83fcd4'
+  aquamarine: '#83fcd4',
+  quartz: '#d6e2ff'
 };
 
 export const paletteLight = {

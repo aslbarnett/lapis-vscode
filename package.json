@@ -1,8 +1,22 @@
 {
-  "name": "lapis",
+  "name": "lapis-vscode",
   "displayName": "Lapis",
-  "description": "A dark blue theme",
+  "description": "A dark blue theme for Visual Studio Code.",
   "version": "0.0.1",
+  "author": {
+    "name": "Alex Barnett",
+    "email": "aslbarnett@gmail.com"
+  },
+  "publisher": "alexbarnett",
+  "homepage": "https://github.com/aslbarnett/lapis-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aslbarnett/lapis-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/aslbarnett/lapis-vscode/issues"
+  },
+  "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -17,7 +31,7 @@
         "path": "./themes/lapis-color-theme.json"
       },
       {
-        "label": "Lapis Stealth",
+        "label": "Lapis (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-stealth-color-theme.json"
       },
@@ -27,7 +41,7 @@
         "path": "./themes/lapis-amethyst-color-theme.json"
       },
       {
-        "label": "Lapis Amethyst Stealth",
+        "label": "Lapis Amethyst (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-amethyst-stealth-color-theme.json"
       },
@@ -37,7 +51,7 @@
         "path": "./themes/lapis-ruby-color-theme.json"
       },
       {
-        "label": "Lapis Ruby Stealth",
+        "label": "Lapis Ruby (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-ruby-stealth-color-theme.json"
       },
@@ -47,7 +61,7 @@
         "path": "./themes/lapis-amber-color-theme.json"
       },
       {
-        "label": "Lapis Amber Stealth",
+        "label": "Lapis Amber (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-amber-stealth-color-theme.json"
       },
@@ -57,7 +71,7 @@
         "path": "./themes/lapis-peridot-color-theme.json"
       },
       {
-        "label": "Lapis Peridot Stealth",
+        "label": "Lapis Peridot (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-peridot-stealth-color-theme.json"
       },
@@ -67,9 +81,19 @@
         "path": "./themes/lapis-aquamarine-color-theme.json"
       },
       {
-        "label": "Lapis Aquamarine Stealth",
+        "label": "Lapis Aquamarine (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-aquamarine-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Quartz",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-quartz-color-theme.json"
+      },
+      {
+        "label": "Lapis Quartz (stealth version)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-quartz-stealth-color-theme.json"
       }
     ]
   },

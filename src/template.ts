@@ -7,7 +7,8 @@ export type Variant =
   | 'ruby'
   | 'amber'
   | 'peridot'
-  | 'aquamarine';
+  | 'aquamarine'
+  | 'quartz';
 
 export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Variant) => {
   function getBaseColor(defaultColor: string, stealthColor: string): string {

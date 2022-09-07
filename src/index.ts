@@ -9,7 +9,8 @@ const createTheme = (
   const themeName = name
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .join(' ')
+    .replace(/stealth/i, '(stealth version)');
   const template = uiTemplate(themeName, baseVariant, variant);
 
   writeFile(
@@ -46,3 +47,7 @@ createTheme('lapis-peridot-stealth', 'stealth', 'peridot');
 // Lapis Aquamarine
 createTheme('lapis-aquamarine', 'default', 'aquamarine');
 createTheme('lapis-aquamarine-stealth', 'stealth', 'aquamarine');
+
+// Lapis Quartz
+createTheme('lapis-quartz', 'default', 'quartz');
+createTheme('lapis-quartz-stealth', 'stealth', 'quartz');
