@@ -29,4 +29,10 @@ As well as accent color variations:
 6.  Click **Reload** to reload the Code
 7.  From the menu bar click: Code > Preferences > Color Theme > **Lapis**
 
+# Feedback
+
+If you see any issues with the theme, please [open an issue](https://github.com/aslbarnett/lapis-vscode/issues).
+
+# Inspiration
+
 Inspired by Night Owl, Halcyon and Dracula.
