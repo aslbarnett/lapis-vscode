@@ -1,4 +1,4 @@
-<p style="width: 200px; margin: 0 auto;"><img src="images/logo.png" /></p>
+<p align="center"><img style="width: 200px" src="images/logo.png" /></p>
 
 # Lapis Visual Studio Code
 
