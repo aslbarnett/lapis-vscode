@@ -29,6 +29,10 @@ As well as accent color variations:
 6.  Click **Reload** to reload the Code
 7.  From the menu bar click: Code > Preferences > Color Theme > **Lapis**
 
+# Other Ports
+
+- [Lapis Terminal.app](https://github.com/aslbarnett/lapis-terminal-app)
+
 # Feedback
 
 If you see any issues with the theme, please [open an issue](https://github.com/aslbarnett/lapis-vscode/issues).
