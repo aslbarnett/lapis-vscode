@@ -180,7 +180,7 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       // List
       'list.activeSelectionBackground': `${base.selection}50`,
       'list.activeSelectionForeground': base.foreground,
-      'list.dropBackground': base.selection,
+      'list.dropBackground': `${base.selectionDark}90`,
       'list.focusBackground': base.selection,
       'list.focusForeground': base.foreground,
       'list.highlightForeground': base.foreground,
