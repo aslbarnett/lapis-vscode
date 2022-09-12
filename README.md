@@ -31,7 +31,7 @@ As well as accent color variations:
 
 # Other Ports
 
-- [Lapis Terminal.app](https://github.com/aslbarnett/lapis-terminal-app)
+- [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 
 # Feedback
 
