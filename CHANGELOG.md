@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.0.4"
+
+- Update terminal link in readme.
+
 ## "1.0.3"
 
 - Fix drop background.
