@@ -2,6 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.0.5"
+
+- Fix low contrast git ignore files.
+- Update logo size.
+
 ## "1.0.4"
 
 - Update terminal link in readme.

@@ -359,7 +359,7 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'gitDecoration.modifiedResourceForeground': palette.lapis,
       'gitDecoration.deletedResourceForeground': palette.ruby,
       'gitDecoration.untrackedResourceForeground': palette.peridot,
-      'gitDecoration.ignoredResourceForeground': `${base.selection}70`,
+      'gitDecoration.ignoredResourceForeground': baseVariant === 'default' ? base.selection : base.selectionDark,
       'gitDecoration.conflictingResourceForeground': palette.ruby,
 
       // Settings
