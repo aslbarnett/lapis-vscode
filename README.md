@@ -1,6 +1,6 @@
 <p align="center"><img style="width: 200px" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/logo.png" /></p>
 
-# Lapis Visual Studio Code
+# Lapis Theme • Visual Studio Code
 
 A dark blue theme for VS Code.
 
@@ -32,6 +32,7 @@ As well as accent color variations:
 # Other Ports
 
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
+- [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
 
 # Feedback
 
