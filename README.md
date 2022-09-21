@@ -2,15 +2,17 @@
 
 # Lapis Theme • Visual Studio Code
 
-A dark blue theme for VS Code.
+A dark blue theme for Visual Studio Code using a complimentary color palette for syntax:
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-demo.png)
+<br />
 
-A lower contrast option (stealth version):
+<p align="center"><img style="width: 500px" src="images/palette.png" /></p>
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-stealth-demo.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-demo.png)
 
-As well as accent color variations:
+There are several theme variations with different **accent and button colors** from the palette:
+
+<br />
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-amethyst-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-ruby-demo.png)
@@ -18,6 +20,16 @@ As well as accent color variations:
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-peridot-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-aquamarine-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-quartz-demo.png)
+
+<br />
+
+Additionally, each variant has a **Stealth Version** where the inactive tabs and project tree have a lower contrast:
+
+<br />
+
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-stealth-demo.png)
+
+<br />
 
 # Installation
 
@@ -29,14 +41,20 @@ As well as accent color variations:
 6.  Click **Reload** to reload the Code
 7.  From the menu bar click: Code > Preferences > Color Theme > **Lapis**
 
+<br />
+
 # Other Ports
 
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 - [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
 
+<br />
+
 # Feedback
 
 If you see any issues with the theme, please [open an issue](https://github.com/aslbarnett/lapis-vscode/issues).
+
+<br />
 
 # Inspiration
 
