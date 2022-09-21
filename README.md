@@ -10,6 +10,8 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-demo.png)
 
+<br />
+
 There are several theme variations with different **accent and button colors** from the palette:
 
 <br />
@@ -29,8 +31,6 @@ Additionally, each variant has a **Stealth Version** where the inactive tabs and
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-stealth-demo.png)
 
-<br />
-
 # Installation
 
 1.  Install [Visual Studio Code](https://code.visualstudio.com/)
@@ -41,20 +41,14 @@ Additionally, each variant has a **Stealth Version** where the inactive tabs and
 6.  Click **Reload** to reload the Code
 7.  From the menu bar click: Code > Preferences > Color Theme > **Lapis**
 
-<br />
-
 # Lapis Theme Ports
 
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 - [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
 
-<br />
-
 # Feedback
 
 If you see any issues with the theme, please [open an issue](https://github.com/aslbarnett/lapis-vscode/issues).
-
-<br />
 
 # Inspiration
 
