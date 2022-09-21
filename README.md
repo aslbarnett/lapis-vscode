@@ -4,17 +4,9 @@
 
 A dark blue theme for Visual Studio Code using a complimentary color palette for syntax:
 
-<br />
-
-<p align="center"><img style="width: 500px" src="images/palette.png" /></p>
-
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-demo.png)
 
-<br />
-
 There are several theme variations with different **accent and button colors** from the palette:
-
-<br />
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-amethyst-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-ruby-demo.png)
@@ -23,11 +15,7 @@ There are several theme variations with different **accent and button colors** f
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-aquamarine-demo.png)
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-quartz-demo.png)
 
-<br />
-
 Additionally, each variant has a **Stealth Version** where the inactive tabs and project tree have a lower contrast:
-
-<br />
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-stealth-demo.png)
 
