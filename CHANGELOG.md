@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.0.8"
+
+- Update readme with new images.
+
 ## "1.0.7"
 
 - Add slack theme to ports list.
