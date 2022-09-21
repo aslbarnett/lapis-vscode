@@ -43,7 +43,7 @@ Additionally, each variant has a **Stealth Version** where the inactive tabs and
 
 <br />
 
-# Other Ports
+# Lapis Theme Ports
 
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 - [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
