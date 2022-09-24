@@ -2,22 +2,17 @@
 
 # Lapis Theme • Visual Studio Code
 
-A dark blue theme for Visual Studio Code using a complimentary color palette for syntax:
+A dark blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**:
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-palette-demo.png)
+![Screenshot](images/lapis-palette.png)
 
-There are several theme variations with different **accent and button colors** from the palette:
+![Screenshot](images/tab-variations.png)
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-amethyst-demo.png)
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-ruby-demo.png)
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-amber-demo.png)
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-peridot-demo.png)
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-aquamarine-demo.png)
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-quartz-demo.png)
+![Screenshot](images/lapis-view.png)
 
 Additionally, each variant has a **Stealth Version** where the inactive tabs and project tree have a lower contrast:
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme-stealth-demo.png)
+![Screenshot](images/lapis-stealth-view.png)
 
 # Installation
 
