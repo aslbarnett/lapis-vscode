@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.0.10"
+
+- Update images.
+
 ## "1.0.9"
 
 - Revise readme images.
