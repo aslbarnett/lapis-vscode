@@ -10,7 +10,11 @@ export type Variant =
   | 'aquamarine'
   | 'quartz';
 
-export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Variant) => {
+export const uiTemplate = (
+  name: string,
+  baseVariant: BaseVariant,
+  variant: Variant
+) => {
   function getBaseColor(defaultColor: string, stealthColor: string): string {
     return baseVariant === 'stealth' ? stealthColor : defaultColor;
   }
@@ -203,7 +207,10 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'activityBar.background': base.background,
       'activityBar.dropBorder': base.selection,
       'activityBar.foreground': base.foreground,
-      'activityBar.inactiveForeground': getBaseColor(base.textMid, base.textDark),
+      'activityBar.inactiveForeground': getBaseColor(
+        base.textMid,
+        base.textDark
+      ),
       'activityBar.border': base.background,
       'activityBarBadge.background': palette[variant],
       'activityBarBadge.foreground': base.background,
@@ -226,7 +233,10 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'tab.inactiveBackground': base.backgroundDark,
       'tab.inactiveForeground': getBaseColor(base.textMid, base.textDark),
       'tab.unfocusedActiveForeground': base.foreground,
-      'tab.unfocusedInactiveForeground': getBaseColor(base.textMid, base.textDark),
+      'tab.unfocusedInactiveForeground': getBaseColor(
+        base.textMid,
+        base.textDark
+      ),
       'tab.hoverForeground': palette[variant],
 
       // Peek View
@@ -268,7 +278,10 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'panel.dropBorder': base.selection,
       'panelTitle.activeBorder': palette[variant],
       'panelTitle.activeForeground': base.foreground,
-      'panelTitle.inactiveForeground': getBaseColor(base.textMid, base.textDark),
+      'panelTitle.inactiveForeground': getBaseColor(
+        base.textMid,
+        base.textDark
+      ),
       'panelInput.border': base.selection,
       'panelSection.border': base.selection,
       'panelSection.dropBackground': base.selection,
@@ -359,7 +372,8 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
       'gitDecoration.modifiedResourceForeground': palette.lapis,
       'gitDecoration.deletedResourceForeground': palette.ruby,
       'gitDecoration.untrackedResourceForeground': palette.peridot,
-      'gitDecoration.ignoredResourceForeground': baseVariant === 'default' ? base.selection : base.selectionDark,
+      'gitDecoration.ignoredResourceForeground':
+        baseVariant === 'default' ? base.selection : base.selectionDark,
       'gitDecoration.conflictingResourceForeground': palette.ruby,
 
       // Settings
@@ -621,6 +635,13 @@ export const uiTemplate = (name: string, baseVariant: BaseVariant, variant: Vari
         ],
         settings: {
           foreground: palette.ruby,
+        },
+      },
+      {
+        name: 'Scala',
+        scope: 'variable.parameter.scala',
+        settings: {
+          foreground: palette.aquamarine,
         },
       },
       {

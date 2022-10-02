@@ -2,7 +2,7 @@
   "name": "lapis-vscode",
   "displayName": "Lapis",
   "description": "A dark blue theme for Visual Studio Code.",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "author": {
     "name": "Alex Barnett",
     "email": "aslbarnett@gmail.com"
@@ -115,7 +115,8 @@
   },
   "scripts": {
     "build": "ts-node ./src/index.ts",
-    "package": "vsce package"
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/node": "^18.7.15",
