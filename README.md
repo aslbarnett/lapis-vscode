@@ -28,6 +28,7 @@ Additionally, each variant has a **Stealth Version** where the inactive tabs and
 
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 - [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
+- [Lapis Google Chrome](https://chrome.google.com/webstore/detail/lapis-chrome-theme/hmcmhgomamidaaodladnploplghibodb)
 
 # Feedback
 
