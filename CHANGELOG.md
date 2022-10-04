@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.0.13"
+
+- Update readme with badge.
+
 ## "1.0.12"
 
 - Update readme with chrome theme.
