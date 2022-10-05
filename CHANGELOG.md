@@ -2,6 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.1.0"
+
+- Add new Lapis Dark Theme.
+- Add new Lapis Dark (stealth version) Theme.
+
 ## "1.0.13"
 
 - Update readme with badge.

@@ -1,17 +1,18 @@
 import { writeFile } from 'fs';
-import { uiTemplate, BaseVariant, Variant } from './template';
+import { uiTemplate, BaseVariant, Variant, Shade } from './template';
 
 const createTheme = (
   name: string,
   baseVariant: BaseVariant,
-  variant: Variant
+  variant: Variant,
+  shade?: Shade
 ) => {
   const themeName = name
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
     .replace(/stealth/i, '(stealth version)');
-  const template = uiTemplate(themeName, baseVariant, variant);
+  const template = uiTemplate(themeName, baseVariant, variant, shade);
 
   writeFile(
     `themes/${name}-color-theme.json`,
@@ -51,3 +52,7 @@ createTheme('lapis-aquamarine-stealth', 'stealth', 'aquamarine');
 // Lapis Quartz
 createTheme('lapis-quartz', 'default', 'quartz');
 createTheme('lapis-quartz-stealth', 'stealth', 'quartz');
+
+// Lapis Dark
+createTheme('lapis-dark', 'default', 'lapis', 'dark');
+createTheme('lapis-dark-stealth', 'stealth', 'lapis', 'dark');
