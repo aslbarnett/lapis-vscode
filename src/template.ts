@@ -9,12 +9,19 @@ export type Variant =
   | 'peridot'
   | 'aquamarine'
   | 'quartz';
+export type Shade = 'default' | 'dark';
 
 export const uiTemplate = (
   name: string,
   baseVariant: BaseVariant,
-  variant: Variant
+  variant: Variant,
+  shade?: Shade
 ) => {
+  const primaryBackgroundColor =
+    shade === 'dark' ? base.backgroundDark : base.background;
+  const secondaryBackgroundColor =
+    shade === 'dark' ? base.background : base.backgroundDark;
+
   function getBaseColor(defaultColor: string, stealthColor: string): string {
     return baseVariant === 'stealth' ? stealthColor : defaultColor;
   }
@@ -33,16 +40,16 @@ export const uiTemplate = (
       // Editor Group
       'editorGroup.border': base.selection,
       'editorGroup.dropBackground': base.selection,
-      'editorGroup.emptyBackground': base.background,
-      'editorGroup.focusedEmptyBorder': base.background,
-      'editorGroupHeader.noTabsBackground': base.background,
-      'editorGroupHeader.tabsBackground': base.backgroundDark,
-      'editorGroupHeader.border': base.background,
-      'editorGroupHeader.tabsBorder': base.background,
+      'editorGroup.emptyBackground': primaryBackgroundColor,
+      'editorGroup.focusedEmptyBorder': primaryBackgroundColor,
+      'editorGroupHeader.noTabsBackground': primaryBackgroundColor,
+      'editorGroupHeader.tabsBackground': secondaryBackgroundColor,
+      'editorGroupHeader.border': primaryBackgroundColor,
+      'editorGroupHeader.tabsBorder': primaryBackgroundColor,
 
       // Editor
-      'editorPane.background': base.background,
-      'editor.background': base.background,
+      'editorPane.background': primaryBackgroundColor,
+      'editor.background': primaryBackgroundColor,
       'editor.foreground': base.foreground,
       'editor.selectionBackground': `${base.selection}60`,
       'editor.selectionForeground': base.foreground,
@@ -60,13 +67,13 @@ export const uiTemplate = (
       'editor.rangeHighlightBackground': `${base.selection}50`,
       'editorLineNumber.foreground': getBaseColor(base.textMid, base.textDark),
       'editorLineNumber.activeForeground': base.foreground,
-      'editorCursor.background': base.background,
+      'editorCursor.background': primaryBackgroundColor,
       'editorCursor.foreground': palette[variant],
       'editorLink.activeForeground': palette.lapis,
       'editorWhitespace.foreground': `${base.selection}50`,
       'editorIndentGuide.background': base.selectionDark,
       'editorIndentGuide.activeBackground': palette[variant],
-      'editorInlayHint.background': base.background,
+      'editorInlayHint.background': primaryBackgroundColor,
       'editorInlayHint.foreground': `${base.selection}99`,
       'editorRuler.foreground': base.selection,
       'editorCodeLens.foreground': base.foreground,
@@ -92,21 +99,21 @@ export const uiTemplate = (
       'editorOverviewRuler.commonContentForeground': base.selection,
 
       // Editor Widget
-      'editorWidget.background': base.background,
-      'editorWidget.border': base.background,
+      'editorWidget.background': primaryBackgroundColor,
+      'editorWidget.border': primaryBackgroundColor,
       'editorWidget.foreground': base.foreground,
-      'editorSuggestWidget.background': base.background,
+      'editorSuggestWidget.background': primaryBackgroundColor,
       'editorSuggestWidget.border': base.selection,
       'editorSuggestWidget.foreground': base.foreground,
       'editorSuggestWidget.highlightForeground': palette.lapis,
       'editorSuggestWidget.selectedBackground': base.selection,
-      'editorHoverWidget.background': base.background,
+      'editorHoverWidget.background': primaryBackgroundColor,
       'editorHoverWidget.border': base.selection,
-      'debugExceptionWidget.background': base.background,
+      'debugExceptionWidget.background': primaryBackgroundColor,
       'debugExceptionWidget.border': base.selection,
 
       // Editor Marker Navigation
-      'editorMarkerNavigation.background': base.background,
+      'editorMarkerNavigation.background': primaryBackgroundColor,
       'editorMarkerNavigationError.background': palette.ruby,
       'editorMarkerNavigationWarning.background': palette.amber,
       'editorMarkerNavigationInfo.background': palette.lapis,
@@ -125,7 +132,7 @@ export const uiTemplate = (
       'editorHint.foreground': palette.aquamarine,
 
       // Editor Gutter
-      'editorGutter.background': base.background,
+      'editorGutter.background': primaryBackgroundColor,
       'editorGutter.modifiedBackground': palette.lapis,
       'editorGutter.addedBackground': palette.peridot,
       'editorGutter.deletedBackground': palette.ruby,
@@ -133,7 +140,7 @@ export const uiTemplate = (
       // Text
       'textBlockQuote.background': base.selection,
       'textBlockQuote.border': base.selection,
-      'textCodeBlock.background': base.background,
+      'textCodeBlock.background': primaryBackgroundColor,
       'textLink.activeForeground': palette[variant],
       'textLink.foreground': palette[variant],
       'textPreformat.foreground': base.foreground,
@@ -141,30 +148,30 @@ export const uiTemplate = (
 
       // Button
       'button.background': palette[variant],
-      'button.foreground': base.background,
+      'button.foreground': primaryBackgroundColor,
       'button.hoverBackground': `${palette[variant]}99`,
 
       // Dropdown
       'dropdown.background': base.selection,
-      'dropdown.listBackground': base.background,
+      'dropdown.listBackground': primaryBackgroundColor,
       'dropdown.border': base.selection,
       'dropdown.foreground': base.foreground,
 
       // Input
-      'input.background': base.background,
+      'input.background': primaryBackgroundColor,
       'input.border': base.selection,
       'input.foreground': base.foreground,
       'input.placeholderForeground': `${base.selection}50`,
       'inputOption.activeBorder': base.selection,
 
       // Input Validation
-      'inputValidation.errorBackground': base.background,
+      'inputValidation.errorBackground': primaryBackgroundColor,
       'inputValidation.errorForeground': palette.ruby,
       'inputValidation.errorBorder': palette.ruby,
-      'inputValidation.infoBackground': base.background,
+      'inputValidation.infoBackground': primaryBackgroundColor,
       'inputValidation.infoForeground': palette.lapis,
       'inputValidation.infoBorder': palette.lapis,
-      'inputValidation.warningBackground': base.background,
+      'inputValidation.warningBackground': primaryBackgroundColor,
       'inputValidation.warningForeground': palette.amber,
       'inputValidation.warningBorder': palette.amber,
 
@@ -175,7 +182,7 @@ export const uiTemplate = (
       'scrollbarSlider.hoverBackground': `${base.selection}99`,
 
       // Badge
-      'badge.foreground': base.background,
+      'badge.foreground': primaryBackgroundColor,
       'badge.background': palette[variant],
 
       // Progress Bar
@@ -196,7 +203,7 @@ export const uiTemplate = (
       'list.invalidItemForeground': palette.ruby,
       'list.errorForeground': palette.ruby,
       'list.warningForeground': palette.amber,
-      'listFilterWidget.background': base.background,
+      'listFilterWidget.background': primaryBackgroundColor,
       'listFilterWidget.outline': base.selection,
       'listFilterWidget.noMatchesOutline': palette.ruby,
 
@@ -204,33 +211,33 @@ export const uiTemplate = (
       'tree.indentGuidesStroke': base.selection,
 
       // Activity Bar
-      'activityBar.background': base.background,
+      'activityBar.background': primaryBackgroundColor,
       'activityBar.dropBorder': base.selection,
       'activityBar.foreground': base.foreground,
       'activityBar.inactiveForeground': getBaseColor(
         base.textMid,
         base.textDark
       ),
-      'activityBar.border': base.background,
+      'activityBar.border': primaryBackgroundColor,
       'activityBarBadge.background': palette[variant],
-      'activityBarBadge.foreground': base.background,
+      'activityBarBadge.foreground': primaryBackgroundColor,
 
       // Side Bar
-      'sideBar.background': base.backgroundDark,
+      'sideBar.background': secondaryBackgroundColor,
       'sideBar.foreground': getBaseColor(base.foreground, base.selection),
       'sideBarTitle.foreground': palette[variant],
-      'sideBarSectionHeader.background': base.backgroundDark,
+      'sideBarSectionHeader.background': secondaryBackgroundColor,
       'sideBarSectionHeader.foreground': palette[variant],
-      'sideBarSectionHeader.border': base.background,
+      'sideBarSectionHeader.border': primaryBackgroundColor,
 
       // Tab
-      'tab.activeBackground': base.background,
-      'tab.unfocusedActiveBackground': base.background,
+      'tab.activeBackground': primaryBackgroundColor,
+      'tab.unfocusedActiveBackground': primaryBackgroundColor,
       'tab.activeForeground': base.foreground,
-      'tab.border': base.backgroundDark,
+      'tab.border': secondaryBackgroundColor,
       'tab.activeBorderTop': palette[variant],
-      'tab.unfocusedActiveBorderTop': base.background,
-      'tab.inactiveBackground': base.backgroundDark,
+      'tab.unfocusedActiveBorderTop': primaryBackgroundColor,
+      'tab.inactiveBackground': secondaryBackgroundColor,
       'tab.inactiveForeground': getBaseColor(base.textMid, base.textDark),
       'tab.unfocusedActiveForeground': base.foreground,
       'tab.unfocusedInactiveForeground': getBaseColor(
@@ -242,7 +249,7 @@ export const uiTemplate = (
       // Peek View
       'peekView.border': palette[variant],
       'peekViewEditor.background': `${base.selectionDark}50`,
-      'peekViewEditorGutter.background': base.background,
+      'peekViewEditorGutter.background': primaryBackgroundColor,
       'peekViewEditor.matchHighlightBackground': `${base.selection}50`,
       'peekViewEditor.matchHighlightBorder': base.foreground,
       'peekViewResult.background': `${base.selectionDark}50`,
@@ -259,9 +266,9 @@ export const uiTemplate = (
       'icon.foreground': base.foreground,
 
       // Checkbox
-      'checkbox.background': base.background,
+      'checkbox.background': primaryBackgroundColor,
       'checkbox.foreground': base.foreground,
-      'checkbox.border': base.background,
+      'checkbox.border': primaryBackgroundColor,
 
       // Merge
       'merge.currentHeaderBackground': `${palette.lapis}70`,
@@ -273,7 +280,7 @@ export const uiTemplate = (
       'merge.commonContentBackground': `${base.selection}60`,
 
       // Panel
-      'panel.background': base.background,
+      'panel.background': primaryBackgroundColor,
       'panel.border': palette[variant],
       'panel.dropBorder': base.selection,
       'panelTitle.activeBorder': palette[variant],
@@ -285,50 +292,50 @@ export const uiTemplate = (
       'panelInput.border': base.selection,
       'panelSection.border': base.selection,
       'panelSection.dropBackground': base.selection,
-      'panelSectionHeader.background': base.background,
+      'panelSectionHeader.background': primaryBackgroundColor,
       'panelSectionHeader.foreground': palette[variant],
 
       // Status Bar
-      'statusBar.background': base.background,
+      'statusBar.background': primaryBackgroundColor,
       'statusBar.foreground': base.foreground,
-      'statusBar.border': base.background,
+      'statusBar.border': primaryBackgroundColor,
       'statusBar.debuggingBackground': palette.amber,
-      'statusBar.debuggingForeground': base.background,
+      'statusBar.debuggingForeground': primaryBackgroundColor,
       'statusBar.noFolderBackground': palette.ruby,
-      'statusBar.noFolderForeground': base.background,
+      'statusBar.noFolderForeground': primaryBackgroundColor,
       'statusBarItem.activeBackground': base.selection,
-      'statusBarItem.hoverBackground': base.background,
+      'statusBarItem.hoverBackground': primaryBackgroundColor,
       'statusBarItem.remoteBackground': palette.peridot,
-      'statusBarItem.remoteForeground': base.background,
+      'statusBarItem.remoteForeground': primaryBackgroundColor,
 
       // Title Bar
-      'titleBar.activeBackground': base.background,
+      'titleBar.activeBackground': primaryBackgroundColor,
       'titleBar.activeForeground': base.foreground,
-      'titleBar.inactiveBackground': base.background,
+      'titleBar.inactiveBackground': primaryBackgroundColor,
       'titleBar.inactiveForeground': base.selection,
-      'titleBar.border': base.background,
+      'titleBar.border': primaryBackgroundColor,
 
       // Menu
       'menubar.selectionForeground': base.foreground,
       'menubar.selectionBackground': base.selection,
       'menu.foreground': base.foreground,
-      'menu.background': base.background,
+      'menu.background': primaryBackgroundColor,
       'menu.selectionForeground': base.foreground,
       'menu.selectionBackground': base.selection,
 
       // Notifications
-      'notificationCenter.border': base.background,
+      'notificationCenter.border': primaryBackgroundColor,
       'notificationCenterHeader.foreground': base.foreground,
-      'notificationCenterHeader.background': base.background,
-      'notificationToast.border': base.background,
+      'notificationCenterHeader.background': primaryBackgroundColor,
+      'notificationToast.border': primaryBackgroundColor,
       'notifications.foreground': base.foreground,
-      'notifications.background': base.background,
-      'notifications.border': base.background,
+      'notifications.background': primaryBackgroundColor,
+      'notifications.border': primaryBackgroundColor,
       'notificationLink.foreground': base.foreground,
 
       // Extension Button
       'extensionButton.prominentBackground': palette[variant],
-      'extensionButton.prominentForeground': base.background,
+      'extensionButton.prominentForeground': primaryBackgroundColor,
       'extensionButton.prominentHoverBackground': `${base.selection}50`,
 
       // Picker Group
@@ -336,7 +343,7 @@ export const uiTemplate = (
       'pickerGroup.foreground': palette[variant],
 
       // Terminal
-      'terminal.background': base.background,
+      'terminal.background': primaryBackgroundColor,
       'terminal.border': palette[variant],
       'terminal.foreground': base.foreground,
       'terminal.ansiBlack': base.selectionDark,
@@ -366,7 +373,7 @@ export const uiTemplate = (
       // Welcome Page
       'welcomePage.buttonBackground': base.selection,
       'welcomePage.buttonHoverBackground': `${base.selection}99`,
-      'walkThrough.embeddedEditorBackground': base.background,
+      'walkThrough.embeddedEditorBackground': primaryBackgroundColor,
 
       // Git Decoration
       'gitDecoration.modifiedResourceForeground': palette.lapis,
@@ -395,10 +402,10 @@ export const uiTemplate = (
 
       // Breadcrumb
       'breadcrumb.foreground': base.foreground,
-      'breadcrumb.background': base.background,
+      'breadcrumb.background': primaryBackgroundColor,
       'breadcrumb.focusForeground': base.foreground,
       'breadcrumb.activeSelectionForeground': base.foreground,
-      'breadcrumbPicker.background': base.background,
+      'breadcrumbPicker.background': primaryBackgroundColor,
     },
     tokenColors: [
       {

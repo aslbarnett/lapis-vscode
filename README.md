@@ -4,6 +4,8 @@
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/AlexBarnett.lapis-vscode.svg?subject=Lapis&colorA=1B1F27&colorB=83ABFC)](https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode)
 
+✨ **NEW! Lapis Dark and Lapis Dark (stealth version) - a higher contrast version** ✨
+
 A dark blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**:
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-palette.png)
