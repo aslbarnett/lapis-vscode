@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.1.3"
+
+- Fix click state on list view.
+
 ## "1.1.2"
 
 - Add new images to readme.
