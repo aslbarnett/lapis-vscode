@@ -192,7 +192,7 @@ export const uiTemplate = (
       'list.activeSelectionBackground': `${base.selection}50`,
       'list.activeSelectionForeground': base.foreground,
       'list.dropBackground': `${base.selectionDark}90`,
-      'list.focusBackground': base.selection,
+      'list.focusBackground': `${base.selection}80`,
       'list.focusForeground': base.foreground,
       'list.highlightForeground': base.foreground,
       'list.hoverBackground': `${base.selection}50`,

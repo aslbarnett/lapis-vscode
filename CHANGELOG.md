@@ -2,6 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.1.2"
+
+- Add new images to readme.
+- Fix color of selected file in Lapis Dark.
+
 ## "1.1.1"
 
 - Fix readme editor image backgrounds.
