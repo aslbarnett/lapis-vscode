@@ -1,6 +1,10 @@
 <p align="center"><img style="width: 200px" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/logo.png" /></p>
 
+<div align="center">
+
 # Lapis Theme • Visual Studio Code
+
+</div>
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
