@@ -18,29 +18,47 @@
   <a>
     <img alt="Open Github Issues" src="https://img.shields.io/github/issues/aslbarnett/lapis-vscode?label=Issues&color=FC83AB&labelColor=1B1F27">
   </a>
+
+  <a href="https://github.com/aslbarnett/lapis-vscode/blob/main/LICENSE">
+    <img alt="Licence MIT" src="https://img.shields.io/github/license/aslbarnett/lapis-vscode?label=License&color=FCD483&labelColor=1B1F27">
+  </a>
 </p>
 
-A dark blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**:
+A dark blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**.
 
-![Gif](images/lapis-demo.gif)
+<div align="center">
+
+<div style="width: 400px">
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-palette.png)
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-view.png)
+</div>
+
+</div>
+
+![Screenshot](images/lapis-index.png)
+
+![Screenshot](images/lapis-colors.png)
+
+![Screenshot](images/lapis-readme.png)
+
+# 🎨 Button / Accent Color Variations
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/tab-variations.png)
 
-Additionally, each variant has a **Stealth Version** where the inactive tabs and project tree have a lower contrast:
+# 🥋 Stealth Versions
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-stealth-view.png)
+Each version of the Lapis theme comes with a corresponding "stealth version" where the project list items, inactive tab colors and comments have a lower contrast than the default versions.
 
-✨ **NEW! Lapis Dark and Lapis Dark (stealth version) - higher contrast themes:** ✨
+![Screenshot](images/lapis-index-stealth.png)
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-dark-view.png)
+# ✨ NEW Lapis Dark!
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-dark-stealth-view.png)
+A new Lapis Dark theme is now available where the colors of the side bar and editor have been reversed to give a higher contrast to the editor.
 
-# Installation
+![Screenshot](images/lapis-dark-index.png)
+
+# 🚀 Installation
 
 1.  Install [Visual Studio Code](https://code.visualstudio.com/)
 2.  Launch Visual Studio Code
@@ -50,16 +68,16 @@ Additionally, each variant has a **Stealth Version** where the inactive tabs and
 6.  Click **Reload** to reload the Code
 7.  From the menu bar click: Code > Preferences > Color Theme > **Lapis**
 
-# Lapis Theme Ports
+# ✈️ Lapis Theme Ports
 
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 - [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
 - [Lapis Google Chrome](https://chrome.google.com/webstore/detail/lapis-chrome-theme/hmcmhgomamidaaodladnploplghibodb)
 
-# Feedback
+# 📝 Feedback
 
 If you see any issues with the theme, please [open an issue](https://github.com/aslbarnett/lapis-vscode/issues).
 
-# Inspiration
+# 💡 Inspiration
 
 Inspired by Night Owl, Halcyon and Dracula.
