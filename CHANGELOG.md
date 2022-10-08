@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.1.6"
+
+- Add issues count.
+
 ## "1.1.5"
 
 - Update readme title.
