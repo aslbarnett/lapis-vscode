@@ -28,15 +28,15 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 <div align="center">
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-palette.png)
+<img width="400px" src="images/lapis-palette.png">
 
 </div>
 
-![Screenshot](images/lapis-index.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-index.png)
 
-![Screenshot](images/lapis-colors.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-colors.png)
 
-![Screenshot](images/lapis-readme.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme.png)
 
 # 🎨 Button / Accent Color Variations
 
@@ -46,13 +46,13 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 Each version of the Lapis theme comes with a corresponding "stealth version" where the project list items, inactive tab colors and comments have a lower contrast than the default versions.
 
-![Screenshot](images/lapis-index-stealth.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-index-stealth.png)
 
 # ✨ NEW Lapis Dark!
 
 A new Lapis Dark theme is now available where the colors of the side bar and editor have been reversed to give a higher contrast to the editor.
 
-![Screenshot](images/lapis-dark-index.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-dark-index.png)
 
 # 🚀 Installation
 
