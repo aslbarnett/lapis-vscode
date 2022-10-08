@@ -28,11 +28,7 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 <div align="center">
 
-<div style="width: 400px">
-
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-palette.png)
-
-</div>
 
 </div>
 
