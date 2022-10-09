@@ -56,3 +56,7 @@ createTheme('lapis-quartz-stealth', 'stealth', 'quartz');
 // Lapis Dark
 createTheme('lapis-dark', 'default', 'lapis', 'dark');
 createTheme('lapis-dark-stealth', 'stealth', 'lapis', 'dark');
+
+// Lapis Amethyst Dark
+createTheme('lapis-amethyst-dark', 'default', 'amethyst', 'dark');
+createTheme('lapis-amethyst-dark-stealth', 'stealth', 'amethyst', 'dark');
