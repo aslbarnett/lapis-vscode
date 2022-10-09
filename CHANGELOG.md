@@ -2,6 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.2.0"
+
+- Add new Lapis Amethyst Dark Theme.
+- Add new Lapis Amethyst Dark (stealth version) Theme.
+
 ## "1.1.7"
 
 - Overhaul of readme file.
