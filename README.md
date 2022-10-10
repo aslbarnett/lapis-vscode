@@ -20,7 +20,7 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 </div>
 
-![Screenshot](images/demo.jpg)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/demo.jpg)
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/tab-variations.png)
 
