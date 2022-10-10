@@ -20,15 +20,13 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 </div>
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-index.png)
-
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-colors.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/tab-variations.png)
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-readme.png)
 
-# 🎨 Button / Accent Color Variations
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-index.png)
 
-![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/tab-variations.png)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-colors.png)
 
 # 🥋 Stealth Versions
 
