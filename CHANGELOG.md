@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.2.1"
+
+- Update readme file.
+
 ## "1.2.0"
 
 - Add new Lapis Amethyst Dark Theme.
