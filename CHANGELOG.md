@@ -2,6 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.3.0"
+
+- Add new Lapis Ruby Dark Theme.
+- Add new Lapis Ruby Dark (stealth version) Theme.
+
 ## "1.2.3"
 
 - Update readme file.
