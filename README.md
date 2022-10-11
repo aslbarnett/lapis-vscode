@@ -34,7 +34,7 @@ Each version of the Lapis theme comes with a corresponding "stealth version" whe
 
 A new Lapis Dark theme is now available where the colors of the side bar and editor have been reversed to give a higher contrast to the editor.
 
-> Variants currently available: Lapis and Amethyst.
+> Variants currently available: Lapis, Amethyst and Ruby.
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-dark-index.png)
 
