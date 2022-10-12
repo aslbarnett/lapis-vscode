@@ -2,7 +2,7 @@
   "name": "lapis-vscode",
   "displayName": "Lapis",
   "description": "A dark blue theme for Visual Studio Code.",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": {
     "name": "Alex Barnett",
     "email": "aslbarnett@gmail.com"
@@ -112,6 +112,16 @@
         "path": "./themes/lapis-amber-stealth-color-theme.json"
       },
       {
+        "label": "Lapis Amber Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-amber-dark-color-theme.json"
+      },
+      {
+        "label": "Lapis Amber Dark (stealth version)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-amber-dark-stealth-color-theme.json"
+      },
+      {
         "label": "Lapis Peridot",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-peridot-color-theme.json"
@@ -120,6 +130,16 @@
         "label": "Lapis Peridot (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-peridot-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Peridot Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-peridot-dark-color-theme.json"
+      },
+      {
+        "label": "Lapis Peridot Dark (stealth version)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-peridot-dark-stealth-color-theme.json"
       },
       {
         "label": "Lapis Aquamarine",
@@ -132,6 +152,16 @@
         "path": "./themes/lapis-aquamarine-stealth-color-theme.json"
       },
       {
+        "label": "Lapis Aquamarine Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-aquamarine-dark-color-theme.json"
+      },
+      {
+        "label": "Lapis Aquamarine Dark (stealth version)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-aquamarine-dark-stealth-color-theme.json"
+      },
+      {
         "label": "Lapis Quartz",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-quartz-color-theme.json"
@@ -140,6 +170,16 @@
         "label": "Lapis Quartz (stealth version)",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-quartz-stealth-color-theme.json"
+      },
+      {
+        "label": "Lapis Quartz Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-quartz-dark-color-theme.json"
+      },
+      {
+        "label": "Lapis Quartz Dark (stealth version)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-quartz-dark-stealth-color-theme.json"
       }
     ]
   },
