@@ -2,6 +2,17 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.4.0"
+
+- Add new Lapis Amber Dark Theme.
+- Add new Lapis Amber Dark (stealth version) Theme.
+- Add new Lapis Peridot Dark Theme.
+- Add new Lapis Peridot Dark (stealth version) Theme.
+- Add new Lapis Aquamarine Dark Theme.
+- Add new Lapis Aquamarine Dark (stealth version) Theme.
+- Add new Lapis Quartz Dark Theme.
+- Add new Lapis Quartz Dark (stealth version) Theme.
+
 ## "1.3.0"
 
 - Add new Lapis Ruby Dark Theme.
