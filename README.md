@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
-    <img alt="Marketplace Version" src="https://vsmarketplacebadge.apphb.com/version/AlexBarnett.lapis-vscode.svg?subject=Version&colorA=1B1F27&colorB=83ABFC">
+    <img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/AlexBarnett.lapis-vscode?label=Version&color=83ABFC&labelColor=1B1F27">
   </a>
 </p>
 

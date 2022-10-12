@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.4.1"
+
+- Fix version badge.
+
 ## "1.4.0"
 
 - Add new Lapis Amber Dark Theme.
