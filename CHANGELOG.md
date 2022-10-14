@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.5.0"
+
+- Add new Lapis Light theme.
+
 ## "1.4.3"
 
 - Refactor theme variant options.

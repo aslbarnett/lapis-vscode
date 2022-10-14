@@ -1,4 +1,11 @@
-import { base, palette, paletteLight } from './colors';
+import {
+  base,
+  lightBase,
+  lightPalette,
+  lightPaletteLight,
+  palette,
+  paletteLight,
+} from './colors';
 
 export type BaseVariant = 'default' | 'stealth';
 export type Variant =
@@ -9,7 +16,7 @@ export type Variant =
   | 'peridot'
   | 'aquamarine'
   | 'quartz';
-export type Shade = 'default' | 'dark';
+export type Shade = 'default' | 'dark' | 'light';
 
 export const uiTemplate = ({
   name,
@@ -22,10 +29,14 @@ export const uiTemplate = ({
   variant: Variant;
   shade?: Shade;
 }) => {
+  const selectedBase = shade === 'light' ? lightBase : base;
+  const selectedPalette = shade === 'light' ? lightPalette : palette;
+  const selectedPaletteLight =
+    shade === 'light' ? lightPaletteLight : paletteLight;
   const primaryBackgroundColor =
-    shade === 'dark' ? base.backgroundDark : base.background;
+    shade === 'dark' ? selectedBase.backgroundDark : selectedBase.background;
   const secondaryBackgroundColor =
-    shade === 'dark' ? base.background : base.backgroundDark;
+    shade === 'dark' ? selectedBase.background : selectedBase.backgroundDark;
 
   function getBaseColor(defaultColor: string, stealthColor: string): string {
     return baseVariant === 'stealth' ? stealthColor : defaultColor;
@@ -35,16 +46,16 @@ export const uiTemplate = ({
     name: name,
     type: 'dark',
     colors: {
-      focusBorder: `${base.selection}50`,
-      foreground: base.foreground,
-      'widget.shadow': base.shadow,
-      'selection.background': `${base.selection}70`,
-      descriptionForeground: base.foreground,
-      errorForeground: palette.ruby,
+      focusBorder: `${selectedBase.selection}50`,
+      foreground: selectedBase.foreground,
+      'widget.shadow': selectedBase.shadow,
+      'selection.background': `${selectedBase.selection}70`,
+      descriptionForeground: selectedBase.foreground,
+      errorForeground: selectedPalette.ruby,
 
       // Editor Group
-      'editorGroup.border': base.selection,
-      'editorGroup.dropBackground': base.selection,
+      'editorGroup.border': selectedBase.selection,
+      'editorGroup.dropBackground': selectedBase.selection,
       'editorGroup.emptyBackground': primaryBackgroundColor,
       'editorGroup.focusedEmptyBorder': primaryBackgroundColor,
       'editorGroupHeader.noTabsBackground': primaryBackgroundColor,
@@ -55,368 +66,399 @@ export const uiTemplate = ({
       // Editor
       'editorPane.background': primaryBackgroundColor,
       'editor.background': primaryBackgroundColor,
-      'editor.foreground': base.foreground,
-      'editor.selectionBackground': `${base.selection}60`,
-      'editor.selectionForeground': base.foreground,
-      'editor.inactiveSelectionBackground': `${base.selection}60`,
-      'editor.selectionHighlightBackground': `${base.selection}60`,
-      'editor.wordHighlightBackground': `${base.selection}60`,
-      'editor.wordHighlightStrongBackground': `${base.selection}80`,
-      'editor.findMatchBackground': `${base.selection}50`,
-      'editor.findMatchHighlightBackground': `${base.selection}50`,
-      'editor.findRangeHighlightBackground': `${base.selection}50`,
-      'editor.findMatchBorder': palette.lapis,
-      'editor.hoverHighlightBackground': `${base.selection}50`,
-      'editor.lineHighlightBackground': `${base.selection}50`,
-      'editor.lineHighlightBorder': `${base.selection}50`,
-      'editor.rangeHighlightBackground': `${base.selection}50`,
-      'editorLineNumber.foreground': getBaseColor(base.textMid, base.textDark),
-      'editorLineNumber.activeForeground': base.foreground,
+      'editor.foreground': selectedBase.foreground,
+      'editor.selectionBackground': `${selectedBase.selection}60`,
+      'editor.selectionForeground': selectedBase.foreground,
+      'editor.inactiveSelectionBackground': `${selectedBase.selection}60`,
+      'editor.selectionHighlightBackground': `${selectedBase.selection}60`,
+      'editor.wordHighlightBackground': `${selectedBase.selection}60`,
+      'editor.wordHighlightStrongBackground': `${selectedBase.selection}80`,
+      'editor.findMatchBackground': `${selectedBase.selection}50`,
+      'editor.findMatchHighlightBackground': `${selectedBase.selection}50`,
+      'editor.findRangeHighlightBackground': `${selectedBase.selection}50`,
+      'editor.findMatchBorder': selectedPalette.lapis,
+      'editor.hoverHighlightBackground': `${selectedBase.selection}50`,
+      'editor.lineHighlightBackground': `${selectedBase.selection}50`,
+      'editor.lineHighlightBorder': `${selectedBase.selection}50`,
+      'editor.rangeHighlightBackground': `${selectedBase.selection}50`,
+      'editorLineNumber.foreground':
+        shade === 'light'
+          ? selectedBase.text
+          : getBaseColor(selectedBase.textMid, selectedBase.textDark),
+      'editorLineNumber.activeForeground':
+        shade === 'light' ? selectedPalette[variant] : selectedBase.foreground,
       'editorCursor.background': primaryBackgroundColor,
-      'editorCursor.foreground': palette[variant],
-      'editorLink.activeForeground': palette.lapis,
-      'editorWhitespace.foreground': `${base.selection}50`,
-      'editorIndentGuide.background': base.selectionDark,
-      'editorIndentGuide.activeBackground': palette[variant],
+      'editorCursor.foreground': selectedPalette[variant],
+      'editorLink.activeForeground': selectedPalette.lapis,
+      'editorWhitespace.foreground': `${selectedBase.selection}50`,
+      'editorIndentGuide.background':
+        shade === 'light' ? selectedBase.selection : selectedBase.selectionDark,
+      'editorIndentGuide.activeBackground': selectedPalette[variant],
       'editorInlayHint.background': primaryBackgroundColor,
-      'editorInlayHint.foreground': `${base.selection}99`,
-      'editorRuler.foreground': base.selection,
-      'editorCodeLens.foreground': base.foreground,
-      'editorBracketMatch.background': `${base.selection}60`,
-      'editorBracketMatch.border': palette.lapis,
+      'editorInlayHint.foreground': `${selectedBase.selection}99`,
+      'editorRuler.foreground': selectedBase.selection,
+      'editorCodeLens.foreground': selectedBase.foreground,
+      'editorBracketMatch.background': `${selectedBase.selection}60`,
+      'editorBracketMatch.border': selectedPalette.lapis,
 
       // Editor Overview Ruler
-      'editorOverviewRuler.border': base.selection,
-      'editorOverviewRuler.findMatchForeground': palette.lapis,
-      'editorOverviewRuler.rangeHighlightForeground': base.selection,
-      'editorOverviewRuler.selectionHighlightForeground': `${base.selection}50`,
-      'editorOverviewRuler.wordHighlightForeground': base.selection,
-      'editorOverviewRuler.wordHighlightStrongForeground': base.selection,
-      'editorOverviewRuler.modifiedForeground': palette.lapis,
-      'editorOverviewRuler.addedForeground': palette.peridot,
-      'editorOverviewRuler.deletedForeground': palette.ruby,
-      'editorOverviewRuler.errorForeground': palette.ruby,
-      'editorOverviewRuler.warningForeground': palette.amber,
-      'editorOverviewRuler.infoForeground': palette.lapis,
-      'editorOverviewRuler.bracketMatchForeground': palette.lapis,
-      'editorOverviewRuler.currentContentForeground': palette.lapis,
-      'editorOverviewRuler.incomingContentForeground': palette.peridot,
-      'editorOverviewRuler.commonContentForeground': base.selection,
+      'editorOverviewRuler.border': selectedBase.selection,
+      'editorOverviewRuler.findMatchForeground': selectedPalette.lapis,
+      'editorOverviewRuler.rangeHighlightForeground': selectedBase.selection,
+      'editorOverviewRuler.selectionHighlightForeground': `${selectedBase.selection}50`,
+      'editorOverviewRuler.wordHighlightForeground': selectedBase.selection,
+      'editorOverviewRuler.wordHighlightStrongForeground':
+        selectedBase.selection,
+      'editorOverviewRuler.modifiedForeground': selectedPalette.lapis,
+      'editorOverviewRuler.addedForeground': selectedPalette.peridot,
+      'editorOverviewRuler.deletedForeground': selectedPalette.ruby,
+      'editorOverviewRuler.errorForeground': selectedPalette.ruby,
+      'editorOverviewRuler.warningForeground': selectedPalette.amber,
+      'editorOverviewRuler.infoForeground': selectedPalette.lapis,
+      'editorOverviewRuler.bracketMatchForeground': selectedPalette.lapis,
+      'editorOverviewRuler.currentContentForeground': selectedPalette.lapis,
+      'editorOverviewRuler.incomingContentForeground': selectedPalette.peridot,
+      'editorOverviewRuler.commonContentForeground': selectedBase.selection,
 
       // Editor Widget
       'editorWidget.background': primaryBackgroundColor,
       'editorWidget.border': primaryBackgroundColor,
-      'editorWidget.foreground': base.foreground,
+      'editorWidget.foreground': selectedBase.foreground,
       'editorSuggestWidget.background': primaryBackgroundColor,
-      'editorSuggestWidget.border': base.selection,
-      'editorSuggestWidget.foreground': base.foreground,
-      'editorSuggestWidget.highlightForeground': palette.lapis,
-      'editorSuggestWidget.selectedBackground': base.selection,
+      'editorSuggestWidget.border': selectedBase.selection,
+      'editorSuggestWidget.foreground': selectedBase.foreground,
+      'editorSuggestWidget.highlightForeground': selectedPalette.lapis,
+      'editorSuggestWidget.selectedBackground': selectedBase.selection,
       'editorHoverWidget.background': primaryBackgroundColor,
-      'editorHoverWidget.border': base.selection,
+      'editorHoverWidget.border': selectedBase.selection,
       'debugExceptionWidget.background': primaryBackgroundColor,
-      'debugExceptionWidget.border': base.selection,
+      'debugExceptionWidget.border': selectedBase.selection,
 
       // Editor Marker Navigation
       'editorMarkerNavigation.background': primaryBackgroundColor,
-      'editorMarkerNavigationError.background': palette.ruby,
-      'editorMarkerNavigationWarning.background': palette.amber,
-      'editorMarkerNavigationInfo.background': palette.lapis,
+      'editorMarkerNavigationError.background': selectedPalette.ruby,
+      'editorMarkerNavigationWarning.background': selectedPalette.amber,
+      'editorMarkerNavigationInfo.background': selectedPalette.lapis,
 
       // Diff Editor
-      'diffEditor.insertedTextBackground': `${palette.peridot}22`,
-      'diffEditor.insertedTextBorder': `${palette.peridot}44`,
-      'diffEditor.removedTextBackground': `${palette.ruby}22`,
-      'diffEditor.removedTextBorder': `${palette.ruby}44`,
-      'diffEditor.border': base.selection,
+      'diffEditor.insertedTextBackground': `${selectedPalette.peridot}22`,
+      'diffEditor.insertedTextBorder': `${selectedPalette.peridot}44`,
+      'diffEditor.removedTextBackground': `${selectedPalette.ruby}22`,
+      'diffEditor.removedTextBorder': `${selectedPalette.ruby}44`,
+      'diffEditor.border': selectedBase.selection,
 
       // Editor Error
-      'editorError.foreground': palette.ruby,
-      'editorWarning.foreground': palette.amber,
-      'editorInfo.foreground': palette.lapis,
-      'editorHint.foreground': palette.aquamarine,
+      'editorError.foreground': selectedPalette.ruby,
+      'editorWarning.foreground': selectedPalette.amber,
+      'editorInfo.foreground': selectedPalette.lapis,
+      'editorHint.foreground': selectedPalette.aquamarine,
 
       // Editor Gutter
       'editorGutter.background': primaryBackgroundColor,
-      'editorGutter.modifiedBackground': palette.lapis,
-      'editorGutter.addedBackground': palette.peridot,
-      'editorGutter.deletedBackground': palette.ruby,
+      'editorGutter.modifiedBackground': selectedPalette.lapis,
+      'editorGutter.addedBackground': selectedPalette.peridot,
+      'editorGutter.deletedBackground': selectedPalette.ruby,
 
       // Text
-      'textBlockQuote.background': base.selection,
-      'textBlockQuote.border': base.selection,
+      'textBlockQuote.background': selectedBase.selection,
+      'textBlockQuote.border': selectedBase.selection,
       'textCodeBlock.background': primaryBackgroundColor,
-      'textLink.activeForeground': palette[variant],
-      'textLink.foreground': palette[variant],
-      'textPreformat.foreground': base.foreground,
-      'textSeparator.foreground': base.foreground,
+      'textLink.activeForeground': selectedPalette[variant],
+      'textLink.foreground': selectedPalette[variant],
+      'textPreformat.foreground': selectedBase.foreground,
+      'textSeparator.foreground': selectedBase.foreground,
 
       // Button
-      'button.background': palette[variant],
+      'button.background': selectedPalette[variant],
       'button.foreground': primaryBackgroundColor,
-      'button.hoverBackground': `${palette[variant]}99`,
+      'button.hoverBackground': `${selectedPalette[variant]}99`,
 
       // Dropdown
-      'dropdown.background': base.selection,
+      'dropdown.background': selectedBase.selection,
       'dropdown.listBackground': primaryBackgroundColor,
-      'dropdown.border': base.selection,
-      'dropdown.foreground': base.foreground,
+      'dropdown.border': selectedBase.selection,
+      'dropdown.foreground': selectedBase.foreground,
 
       // Input
       'input.background': primaryBackgroundColor,
-      'input.border': base.selection,
-      'input.foreground': base.foreground,
-      'input.placeholderForeground': `${base.selection}50`,
-      'inputOption.activeBorder': base.selection,
+      'input.border': selectedBase.selection,
+      'input.foreground': selectedBase.foreground,
+      'input.placeholderForeground': `${selectedBase.selection}50`,
+      'inputOption.activeBorder': selectedBase.selection,
 
       // Input Validation
       'inputValidation.errorBackground': primaryBackgroundColor,
-      'inputValidation.errorForeground': palette.ruby,
-      'inputValidation.errorBorder': palette.ruby,
+      'inputValidation.errorForeground': selectedPalette.ruby,
+      'inputValidation.errorBorder': selectedPalette.ruby,
       'inputValidation.infoBackground': primaryBackgroundColor,
-      'inputValidation.infoForeground': palette.lapis,
-      'inputValidation.infoBorder': palette.lapis,
+      'inputValidation.infoForeground': selectedPalette.lapis,
+      'inputValidation.infoBorder': selectedPalette.lapis,
       'inputValidation.warningBackground': primaryBackgroundColor,
-      'inputValidation.warningForeground': palette.amber,
-      'inputValidation.warningBorder': palette.amber,
+      'inputValidation.warningForeground': selectedPalette.amber,
+      'inputValidation.warningBorder': selectedPalette.amber,
 
       // Scrollbar
-      'scrollbar.shadow': base.shadow,
-      'scrollbarSlider.activeBackground': `${base.selection}50`,
-      'scrollbarSlider.background': `${base.selection}60`,
-      'scrollbarSlider.hoverBackground': `${base.selection}99`,
+      'scrollbar.shadow': selectedBase.shadow,
+      'scrollbarSlider.activeBackground': `${selectedBase.selection}50`,
+      'scrollbarSlider.background': `${selectedBase.selection}60`,
+      'scrollbarSlider.hoverBackground': `${selectedBase.selection}99`,
 
       // Badge
       'badge.foreground': primaryBackgroundColor,
-      'badge.background': palette[variant],
+      'badge.background': selectedPalette[variant],
 
       // Progress Bar
-      'progressBar.background': palette[variant],
+      'progressBar.background': selectedPalette[variant],
 
       // List
-      'list.activeSelectionBackground': `${base.selectionDark}90`,
-      'list.activeSelectionForeground': base.foreground,
-      'list.dropBackground': `${base.selectionDark}90`,
-      'list.focusBackground': `${base.selectionDark}90`,
-      'list.focusForeground': base.foreground,
-      'list.highlightForeground': base.foreground,
-      'list.hoverBackground': `${base.selection}50`,
-      'list.hoverForeground': base.textMid,
-      'list.inactiveSelectionBackground': `${base.selectionDark}90`,
-      'list.inactiveSelectionForeground': base.foreground,
-      'list.inactiveFocusBackground': `${base.selectionDark}90`,
-      'list.invalidItemForeground': palette.ruby,
-      'list.errorForeground': palette.ruby,
-      'list.warningForeground': palette.amber,
+      'list.activeSelectionBackground':
+        shade === 'light'
+          ? `${selectedBase.selectionDark}70`
+          : `${selectedBase.selectionDark}90`,
+      'list.activeSelectionForeground': selectedBase.foreground,
+      'list.dropBackground':
+        shade === 'light'
+          ? `${selectedBase.selectionDark}70`
+          : `${selectedBase.selectionDark}90`,
+      'list.focusBackground':
+        shade === 'light'
+          ? `${selectedBase.selectionDark}70`
+          : `${selectedBase.selectionDark}90`,
+      'list.focusForeground': selectedBase.foreground,
+      'list.highlightForeground': selectedBase.foreground,
+      'list.hoverBackground': `${selectedBase.selection}50`,
+      'list.hoverForeground': selectedBase.textMid,
+      'list.inactiveSelectionBackground':
+        shade === 'light'
+          ? `${selectedBase.selectionDark}70`
+          : `${selectedBase.selectionDark}90`,
+      'list.inactiveSelectionForeground': selectedBase.foreground,
+      'list.inactiveFocusBackground':
+        shade === 'light'
+          ? `${selectedBase.selectionDark}70`
+          : `${selectedBase.selectionDark}90`,
+      'list.invalidItemForeground': selectedPalette.ruby,
+      'list.errorForeground': selectedPalette.ruby,
+      'list.warningForeground': selectedPalette.amber,
       'listFilterWidget.background': primaryBackgroundColor,
-      'listFilterWidget.outline': base.selection,
-      'listFilterWidget.noMatchesOutline': palette.ruby,
+      'listFilterWidget.outline': selectedBase.selection,
+      'listFilterWidget.noMatchesOutline': selectedPalette.ruby,
 
       // Tree
-      'tree.indentGuidesStroke': base.selection,
+      'tree.indentGuidesStroke': selectedBase.selection,
 
       // Activity Bar
       'activityBar.background': primaryBackgroundColor,
-      'activityBar.dropBorder': base.selection,
-      'activityBar.foreground': base.foreground,
+      'activityBar.dropBorder': selectedBase.selection,
+      'activityBar.foreground':
+        shade === 'light' ? selectedPalette[variant] : selectedBase.foreground,
       'activityBar.inactiveForeground': getBaseColor(
-        base.textMid,
-        base.textDark
+        selectedBase.textMid,
+        selectedBase.textDark
       ),
       'activityBar.border': primaryBackgroundColor,
-      'activityBarBadge.background': palette[variant],
+      'activityBarBadge.background': selectedPalette[variant],
       'activityBarBadge.foreground': primaryBackgroundColor,
 
       // Side Bar
       'sideBar.background': secondaryBackgroundColor,
-      'sideBar.foreground': getBaseColor(base.foreground, base.selection),
-      'sideBarTitle.foreground': palette[variant],
+      'sideBar.foreground': getBaseColor(
+        selectedBase.foreground,
+        selectedBase.selection
+      ),
+      'sideBarTitle.foreground': selectedPalette[variant],
       'sideBarSectionHeader.background': secondaryBackgroundColor,
-      'sideBarSectionHeader.foreground': palette[variant],
+      'sideBarSectionHeader.foreground': selectedPalette[variant],
       'sideBarSectionHeader.border': primaryBackgroundColor,
 
       // Tab
       'tab.activeBackground': primaryBackgroundColor,
       'tab.unfocusedActiveBackground': primaryBackgroundColor,
-      'tab.activeForeground': base.foreground,
+      'tab.activeForeground': selectedBase.foreground,
       'tab.border': secondaryBackgroundColor,
-      'tab.activeBorderTop': palette[variant],
+      'tab.activeBorderTop': selectedPalette[variant],
       'tab.unfocusedActiveBorderTop': primaryBackgroundColor,
       'tab.inactiveBackground': secondaryBackgroundColor,
-      'tab.inactiveForeground': getBaseColor(base.textMid, base.textDark),
-      'tab.unfocusedActiveForeground': base.foreground,
-      'tab.unfocusedInactiveForeground': getBaseColor(
-        base.textMid,
-        base.textDark
+      'tab.inactiveForeground': getBaseColor(
+        selectedBase.textMid,
+        selectedBase.textDark
       ),
-      'tab.hoverForeground': palette[variant],
+      'tab.unfocusedActiveForeground': selectedBase.foreground,
+      'tab.unfocusedInactiveForeground': getBaseColor(
+        selectedBase.textMid,
+        selectedBase.textDark
+      ),
+      'tab.hoverForeground': selectedPalette[variant],
 
       // Peek View
-      'peekView.border': palette[variant],
-      'peekViewEditor.background': `${base.selectionDark}50`,
+      'peekView.border': selectedPalette[variant],
+      'peekViewEditor.background': `${selectedBase.selectionDark}50`,
       'peekViewEditorGutter.background': primaryBackgroundColor,
-      'peekViewEditor.matchHighlightBackground': `${base.selection}50`,
-      'peekViewEditor.matchHighlightBorder': base.foreground,
-      'peekViewResult.background': `${base.selectionDark}50`,
-      'peekViewResult.fileForeground': base.foreground,
-      'peekViewResult.lineForeground': palette[variant],
-      'peekViewResult.matchHighlightBackground': base.selectionDark,
-      'peekViewResult.selectionBackground': base.selection,
-      'peekViewResult.selectionForeground': base.foreground,
-      'peekViewTitle.background': `${base.selectionDark}50`,
-      'peekViewTitleDescription.foreground': base.foreground,
-      'peekViewTitleLabel.foreground': base.foreground,
+      'peekViewEditor.matchHighlightBackground': `${selectedBase.selection}50`,
+      'peekViewEditor.matchHighlightBorder': selectedBase.foreground,
+      'peekViewResult.background': `${selectedBase.selectionDark}50`,
+      'peekViewResult.fileForeground': selectedBase.foreground,
+      'peekViewResult.lineForeground': selectedPalette[variant],
+      'peekViewResult.matchHighlightBackground': selectedBase.selectionDark,
+      'peekViewResult.selectionBackground': selectedBase.selection,
+      'peekViewResult.selectionForeground': selectedBase.foreground,
+      'peekViewTitle.background': `${selectedBase.selectionDark}50`,
+      'peekViewTitleDescription.foreground': selectedBase.foreground,
+      'peekViewTitleLabel.foreground': selectedBase.foreground,
 
       // Icon
-      'icon.foreground': base.foreground,
+      'icon.foreground': selectedBase.foreground,
 
       // Checkbox
       'checkbox.background': primaryBackgroundColor,
-      'checkbox.foreground': base.foreground,
+      'checkbox.foreground': selectedBase.foreground,
       'checkbox.border': primaryBackgroundColor,
 
       // Merge
-      'merge.currentHeaderBackground': `${palette.lapis}70`,
-      'merge.currentContentBackground': `${palette.lapis}22`,
-      'merge.incomingHeaderBackground': `${palette.peridot}70`,
-      'merge.incomingContentBackground': `${palette.peridot}22`,
-      'merge.border': base.selection,
-      'merge.commonHeaderBackground': `${base.selection}70`,
-      'merge.commonContentBackground': `${base.selection}60`,
+      'merge.currentHeaderBackground': `${selectedPalette.lapis}70`,
+      'merge.currentContentBackground': `${selectedPalette.lapis}22`,
+      'merge.incomingHeaderBackground': `${selectedPalette.peridot}70`,
+      'merge.incomingContentBackground': `${selectedPalette.peridot}22`,
+      'merge.border': selectedBase.selection,
+      'merge.commonHeaderBackground': `${selectedBase.selection}70`,
+      'merge.commonContentBackground': `${selectedBase.selection}60`,
 
       // Panel
       'panel.background': primaryBackgroundColor,
-      'panel.border': palette[variant],
-      'panel.dropBorder': base.selection,
-      'panelTitle.activeBorder': palette[variant],
-      'panelTitle.activeForeground': base.foreground,
+      'panel.border': selectedPalette[variant],
+      'panel.dropBorder': selectedBase.selection,
+      'panelTitle.activeBorder': selectedPalette[variant],
+      'panelTitle.activeForeground': selectedBase.foreground,
       'panelTitle.inactiveForeground': getBaseColor(
-        base.textMid,
-        base.textDark
+        selectedBase.textMid,
+        selectedBase.textDark
       ),
-      'panelInput.border': base.selection,
-      'panelSection.border': base.selection,
-      'panelSection.dropBackground': base.selection,
+      'panelInput.border': selectedBase.selection,
+      'panelSection.border': selectedBase.selection,
+      'panelSection.dropBackground': selectedBase.selection,
       'panelSectionHeader.background': primaryBackgroundColor,
-      'panelSectionHeader.foreground': palette[variant],
+      'panelSectionHeader.foreground': selectedPalette[variant],
 
       // Status Bar
       'statusBar.background': primaryBackgroundColor,
-      'statusBar.foreground': base.foreground,
+      'statusBar.foreground': selectedBase.foreground,
       'statusBar.border': primaryBackgroundColor,
-      'statusBar.debuggingBackground': palette.amber,
+      'statusBar.debuggingBackground': selectedPalette.amber,
       'statusBar.debuggingForeground': primaryBackgroundColor,
-      'statusBar.noFolderBackground': palette.ruby,
+      'statusBar.noFolderBackground': selectedPalette.ruby,
       'statusBar.noFolderForeground': primaryBackgroundColor,
-      'statusBarItem.activeBackground': base.selection,
-      'statusBarItem.hoverBackground': primaryBackgroundColor,
-      'statusBarItem.remoteBackground': palette.peridot,
+      'statusBarItem.activeBackground': selectedBase.selection,
+      'statusBarItem.hoverBackground': selectedBase.selection,
+      'statusBarItem.remoteBackground': selectedPalette.peridot,
       'statusBarItem.remoteForeground': primaryBackgroundColor,
 
       // Title Bar
       'titleBar.activeBackground': primaryBackgroundColor,
-      'titleBar.activeForeground': base.foreground,
+      'titleBar.activeForeground': selectedBase.foreground,
       'titleBar.inactiveBackground': primaryBackgroundColor,
-      'titleBar.inactiveForeground': base.selection,
+      'titleBar.inactiveForeground': selectedBase.selection,
       'titleBar.border': primaryBackgroundColor,
 
       // Menu
-      'menubar.selectionForeground': base.foreground,
-      'menubar.selectionBackground': base.selection,
-      'menu.foreground': base.foreground,
+      'menubar.selectionForeground': selectedBase.foreground,
+      'menubar.selectionBackground': selectedBase.selection,
+      'menu.foreground': selectedBase.foreground,
       'menu.background': primaryBackgroundColor,
-      'menu.selectionForeground': base.foreground,
-      'menu.selectionBackground': base.selection,
+      'menu.selectionForeground': selectedBase.foreground,
+      'menu.selectionBackground': selectedBase.selection,
 
       // Notifications
       'notificationCenter.border': primaryBackgroundColor,
-      'notificationCenterHeader.foreground': base.foreground,
+      'notificationCenterHeader.foreground': selectedBase.foreground,
       'notificationCenterHeader.background': primaryBackgroundColor,
       'notificationToast.border': primaryBackgroundColor,
-      'notifications.foreground': base.foreground,
+      'notifications.foreground': selectedBase.foreground,
       'notifications.background': primaryBackgroundColor,
       'notifications.border': primaryBackgroundColor,
-      'notificationLink.foreground': base.foreground,
+      'notificationLink.foreground': selectedBase.foreground,
 
       // Extension Button
-      'extensionButton.prominentBackground': palette[variant],
+      'extensionButton.prominentBackground': selectedPalette[variant],
       'extensionButton.prominentForeground': primaryBackgroundColor,
-      'extensionButton.prominentHoverBackground': `${base.selection}50`,
+      'extensionButton.prominentHoverBackground': `${selectedBase.selection}50`,
 
       // Picker Group
-      'pickerGroup.border': base.selection,
-      'pickerGroup.foreground': palette[variant],
+      'pickerGroup.border': selectedBase.selection,
+      'pickerGroup.foreground': selectedPalette[variant],
 
       // Terminal
       'terminal.background': primaryBackgroundColor,
-      'terminal.border': palette[variant],
-      'terminal.foreground': base.foreground,
-      'terminal.ansiBlack': base.selectionDark,
-      'terminal.ansiBlue': palette.lapis,
-      'terminal.ansiBrightBlue': paletteLight.lapis,
-      'terminal.ansiBrightCyan': paletteLight.aquamarine,
-      'terminal.ansiBrightGreen': paletteLight.peridot,
-      'terminal.ansiBrightBlack': base.selection,
-      'terminal.ansiBrightMagenta': paletteLight.amethyst,
-      'terminal.ansiBrightRed': paletteLight.ruby,
-      'terminal.ansiBrightWhite': base.foreground,
-      'terminal.ansiBrightYellow': paletteLight.amber,
-      'terminal.ansiCyan': palette.aquamarine,
-      'terminal.ansiGreen': palette.peridot,
-      'terminal.ansiMagenta': palette.amethyst,
-      'terminal.ansiRed': palette.ruby,
-      'terminal.ansiWhite': base.foreground,
-      'terminal.ansiYellow': palette.amber,
-      'terminal.selectionBackground': `${base.selection}33`,
-      'terminalCursor.background': palette[variant],
-      'terminalCursor.foreground': palette[variant],
+      'terminal.border': selectedPalette[variant],
+      'terminal.foreground': selectedBase.foreground,
+      'terminal.ansiBlack': selectedBase.selectionDark,
+      'terminal.ansiBlue': selectedPalette.lapis,
+      'terminal.ansiBrightBlue': selectedPaletteLight.lapis,
+      'terminal.ansiBrightCyan': selectedPaletteLight.aquamarine,
+      'terminal.ansiBrightGreen': selectedPaletteLight.peridot,
+      'terminal.ansiBrightBlack': selectedBase.selection,
+      'terminal.ansiBrightMagenta': selectedPaletteLight.amethyst,
+      'terminal.ansiBrightRed': selectedPaletteLight.ruby,
+      'terminal.ansiBrightWhite': selectedBase.foreground,
+      'terminal.ansiBrightYellow': selectedPaletteLight.amber,
+      'terminal.ansiCyan': selectedPalette.aquamarine,
+      'terminal.ansiGreen': selectedPalette.peridot,
+      'terminal.ansiMagenta': selectedPalette.amethyst,
+      'terminal.ansiRed': selectedPalette.ruby,
+      'terminal.ansiWhite': selectedBase.foreground,
+      'terminal.ansiYellow': selectedPalette.amber,
+      'terminal.selectionBackground': `${selectedBase.selection}33`,
+      'terminalCursor.background': selectedPalette[variant],
+      'terminalCursor.foreground': selectedPalette[variant],
 
       // Debug Toolbar
-      'debugToolBar.background': base.selection,
-      'debugToolBar.border': base.selection,
+      'debugToolBar.background': selectedBase.selection,
+      'debugToolBar.border': selectedBase.selection,
 
       // Welcome Page
-      'welcomePage.buttonBackground': base.selection,
-      'welcomePage.buttonHoverBackground': `${base.selection}99`,
+      'welcomePage.buttonBackground': selectedBase.selection,
+      'welcomePage.buttonHoverBackground': `${selectedBase.selection}99`,
       'walkThrough.embeddedEditorBackground': primaryBackgroundColor,
 
       // Git Decoration
-      'gitDecoration.modifiedResourceForeground': palette.lapis,
-      'gitDecoration.deletedResourceForeground': palette.ruby,
-      'gitDecoration.untrackedResourceForeground': palette.peridot,
+      'gitDecoration.modifiedResourceForeground': selectedPalette.lapis,
+      'gitDecoration.deletedResourceForeground': selectedPalette.ruby,
+      'gitDecoration.untrackedResourceForeground': selectedPalette.peridot,
       'gitDecoration.ignoredResourceForeground':
-        baseVariant === 'default' ? base.selection : base.selectionDark,
-      'gitDecoration.conflictingResourceForeground': palette.ruby,
+        baseVariant === 'default'
+          ? selectedBase.selection
+          : selectedBase.selectionDark,
+      'gitDecoration.conflictingResourceForeground': selectedPalette.ruby,
 
       // Settings
-      'settings.headerForeground': base.foreground,
-      'settings.modifiedItemIndicator': palette[variant],
-      'settings.dropdownBackground': base.selectionDark,
-      'settings.dropdownForeground': base.foreground,
-      'settings.dropdownBorder': base.selectionDark,
-      'settings.dropdownListBorder': base.selectionDark,
-      'settings.checkboxBackground': base.selectionDark,
-      'settings.checkboxForeground': base.foreground,
-      'settings.checkboxBorder': base.selectionDark,
-      'settings.textInputBackground': base.selectionDark,
-      'settings.textInputForeground': base.foreground,
-      'settings.textInputBorder': base.selectionDark,
-      'settings.numberInputBackground': base.selectionDark,
-      'settings.numberInputForeground': base.foreground,
-      'settings.numberInputBorder': base.selectionDark,
+      'settings.headerForeground': selectedBase.foreground,
+      'settings.modifiedItemIndicator': selectedPalette[variant],
+      'settings.dropdownBackground':
+        shade === 'light' ? selectedBase.selection : selectedBase.selectionDark,
+      'settings.dropdownForeground': selectedBase.foreground,
+      'settings.dropdownBorder': selectedBase.selectionDark,
+      'settings.dropdownListBorder': selectedBase.selectionDark,
+      'settings.checkboxBackground': selectedBase.selectionDark,
+      'settings.checkboxForeground': selectedBase.foreground,
+      'settings.checkboxBorder': selectedBase.selectionDark,
+      'settings.textInputBackground': selectedBase.selectionDark,
+      'settings.textInputForeground': selectedBase.foreground,
+      'settings.textInputBorder': selectedBase.selectionDark,
+      'settings.numberInputBackground': selectedBase.selectionDark,
+      'settings.numberInputForeground': selectedBase.foreground,
+      'settings.numberInputBorder': selectedBase.selectionDark,
 
       // Breadcrumb
-      'breadcrumb.foreground': base.foreground,
+      'breadcrumb.foreground': selectedBase.foreground,
       'breadcrumb.background': primaryBackgroundColor,
-      'breadcrumb.focusForeground': base.foreground,
-      'breadcrumb.activeSelectionForeground': base.foreground,
+      'breadcrumb.focusForeground': selectedBase.foreground,
+      'breadcrumb.activeSelectionForeground': selectedBase.foreground,
       'breadcrumbPicker.background': primaryBackgroundColor,
     },
     tokenColors: [
       {
         scope: [],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -424,14 +466,17 @@ export const uiTemplate = ({
         scope: ['comment', 'punctuation.definition.comment'],
         settings: {
           fontStyle: 'italic',
-          foreground: getBaseColor(base.textMid, base.textDark),
+          foreground:
+            shade === 'light'
+              ? selectedBase.text
+              : getBaseColor(selectedBase.textMid, selectedBase.textDark),
         },
       },
       {
         name: 'Variables',
         scope: ['variable', 'string constant.other.placeholder', 'source'],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -444,14 +489,14 @@ export const uiTemplate = ({
           'punctuation.section.tag.twig',
         ],
         settings: {
-          foreground: palette.amethyst,
+          foreground: selectedPalette.amethyst,
         },
       },
       {
         name: 'Invalid',
         scope: ['invalid', 'invalid.illegal'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -465,21 +510,21 @@ export const uiTemplate = ({
           'constant.escape',
         ],
         settings: {
-          foreground: palette.lapis,
+          foreground: selectedPalette.lapis,
         },
       },
       {
         name: 'Keyword',
         scope: ['keyword'],
         settings: {
-          foreground: palette.amethyst,
+          foreground: selectedPalette.amethyst,
         },
       },
       {
         name: 'Constant, Number',
         scope: ['constant.language.boolean', 'constant.numeric'],
         settings: {
-          foreground: palette.amber,
+          foreground: selectedPalette.amber,
         },
       },
       {
@@ -502,7 +547,7 @@ export const uiTemplate = ({
           'text.html.nunjucks',
         ],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -524,7 +569,7 @@ export const uiTemplate = ({
           'string.unquoted.filter-pipe',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -542,7 +587,7 @@ export const uiTemplate = ({
           'variable.other.object',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -556,14 +601,14 @@ export const uiTemplate = ({
           'keyword.control.filter',
         ],
         settings: {
-          foreground: palette.amethyst,
+          foreground: selectedPalette.amethyst,
         },
       },
       {
         name: 'Block Level Variables',
         scope: ['meta.block variable.other'],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -578,7 +623,7 @@ export const uiTemplate = ({
           'variable.other.object.property',
         ],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -597,7 +642,7 @@ export const uiTemplate = ({
           'storage.type.attr.nunjucks',
         ],
         settings: {
-          foreground: palette.peridot,
+          foreground: selectedPalette.peridot,
         },
       },
       {
@@ -613,7 +658,7 @@ export const uiTemplate = ({
           'meta.object-literal.key',
         ],
         settings: {
-          foreground: palette.lapis,
+          foreground: selectedPalette.lapis,
         },
       },
       {
@@ -629,7 +674,7 @@ export const uiTemplate = ({
           'variable.other.readwrite',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -646,21 +691,21 @@ export const uiTemplate = ({
           'support.variable.object.process',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         name: 'Scala',
         scope: 'variable.parameter.scala',
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
         name: 'Sub-methods',
         scope: ['entity.name.module.js', 'variable.import.parameter.js'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -668,7 +713,7 @@ export const uiTemplate = ({
         scope: ['variable.language'],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -676,7 +721,7 @@ export const uiTemplate = ({
         scope: ['entity.name.method.js'],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -686,14 +731,14 @@ export const uiTemplate = ({
           'variable.function.constructor',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         name: 'Attributes',
         scope: ['entity.other.attribute-name'],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -703,7 +748,7 @@ export const uiTemplate = ({
           'text.html.basic entity.other.attribute-name',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -713,49 +758,49 @@ export const uiTemplate = ({
           'punctuation.definition.entity.css',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
         name: "CSS ID's",
         scope: ['source.sass keyword.control'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         name: 'Inserted',
         scope: ['markup.inserted'],
         settings: {
-          foreground: palette.peridot,
+          foreground: selectedPalette.peridot,
         },
       },
       {
         name: 'Deleted',
         scope: ['markup.deleted'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         name: 'Changed',
         scope: ['markup.changed'],
         settings: {
-          foreground: palette.amethyst,
+          foreground: selectedPalette.amethyst,
         },
       },
       {
         name: 'Regular Expressions',
         scope: ['string.regexp'],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
         name: 'Escape Characters',
         scope: ['constant.character.escape'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -773,7 +818,7 @@ export const uiTemplate = ({
           'tag.decorator.js punctuation.definition.tag',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -783,7 +828,7 @@ export const uiTemplate = ({
         ],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -792,7 +837,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -801,7 +846,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -810,7 +855,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -819,7 +864,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -828,7 +873,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -837,7 +882,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -846,7 +891,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -855,7 +900,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -864,7 +909,7 @@ export const uiTemplate = ({
           'source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json',
         ],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
@@ -872,7 +917,7 @@ export const uiTemplate = ({
         scope: ['markup.italic'],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -880,7 +925,7 @@ export const uiTemplate = ({
         scope: ['markup.bold'],
         settings: {
           fontStyle: 'bold',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -888,7 +933,7 @@ export const uiTemplate = ({
         scope: ['markup.underline'],
         settings: {
           fontStyle: 'underline',
-          foreground: palette.amethyst,
+          foreground: selectedPalette.amethyst,
         },
       },
       {
@@ -896,7 +941,7 @@ export const uiTemplate = ({
         scope: ['markup.strike'],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.amber,
+          foreground: selectedPalette.amber,
         },
       },
       {
@@ -904,21 +949,21 @@ export const uiTemplate = ({
         scope: ['markup.quote'],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         name: 'Markup - Raw Block',
         scope: ['markup.raw.block'],
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
       {
         name: 'Markup - Table',
         scope: ['markup.table'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -928,7 +973,7 @@ export const uiTemplate = ({
           'punctuation.definition.list_item.markdown',
         ],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -938,14 +983,14 @@ export const uiTemplate = ({
           'text.html.markdown markup.inline.raw.string.markdown',
         ],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         name: 'Markdown - Line Break',
         scope: ['text.html.markdown meta.dummy.line-break'],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -958,7 +1003,7 @@ export const uiTemplate = ({
           'punctuation.definition.heading.markdown',
         ],
         settings: {
-          foreground: palette.peridot,
+          foreground: selectedPalette.peridot,
         },
       },
       {
@@ -966,7 +1011,7 @@ export const uiTemplate = ({
         scope: ['markup.quote', 'punctuation.definition.blockquote.markdown'],
         settings: {
           fontStyle: 'italic',
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
@@ -974,14 +1019,14 @@ export const uiTemplate = ({
         scope: ['string.other.link.title.markdown'],
         settings: {
           fontStyle: 'underline',
-          foreground: palette.amber,
+          foreground: selectedPalette.amber,
         },
       },
       {
         name: 'Markdown - Raw Block Fenced',
         scope: ['markup.raw.block.fenced.markdown'],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -991,7 +1036,7 @@ export const uiTemplate = ({
           'variable.language.fenced.markdown',
         ],
         settings: {
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -999,7 +1044,7 @@ export const uiTemplate = ({
         scope: ['variable.language.fenced.markdown'],
         settings: {
           fontStyle: '',
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
@@ -1007,43 +1052,43 @@ export const uiTemplate = ({
         scope: ['meta.separator'],
         settings: {
           fontStyle: '',
-          foreground: base.foreground,
+          foreground: selectedBase.foreground,
         },
       },
       {
         scope: 'token.info-token',
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         scope: 'token.warn-token',
         settings: {
-          foreground: palette.amber,
+          foreground: selectedPalette.amber,
         },
       },
       {
         scope: 'token.error-token',
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         scope: 'token.debug-token',
         settings: {
-          foreground: palette.amethyst,
+          foreground: selectedPalette.amethyst,
         },
       },
       {
         scope: ['storage.type.error.go'],
         settings: {
-          foreground: palette.ruby,
+          foreground: selectedPalette.ruby,
         },
       },
       {
         scope: 'punctuation.other.period.go',
         settings: {
-          foreground: palette.aquamarine,
+          foreground: selectedPalette.aquamarine,
         },
       },
     ],
