@@ -12,7 +12,7 @@
   </a>
 </p>
 
-A blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations (for dark theme)**.
+A blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations (for dark theme)**.<br>
 ✨ **New Lapis Light** theme now available currently with one variation but more coming soon! (scroll down for screenshot) ✨
 
 <div align="center">
@@ -29,7 +29,7 @@ A blue theme for Visual Studio Code using a complimentary color palette for synt
 ## ✨ NEW Lapis Light!
 
 A new Lapis Light theme is now available!<br>
-Font used: **Fira Code**
+Font used: **Fira Code**<br>
 Font weight used: **600**
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/demo-light.jpg)
