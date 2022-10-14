@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.4.3"
+
+- Refactor theme variant options.
+
 ## "1.4.2"
 
 - Update readme file.

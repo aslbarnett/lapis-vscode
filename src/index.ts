@@ -1,18 +1,28 @@
 import { writeFile } from 'fs';
 import { uiTemplate, BaseVariant, Variant, Shade } from './template';
 
-const createTheme = (
-  name: string,
-  baseVariant: BaseVariant,
-  variant: Variant,
-  shade?: Shade
-) => {
+const createTheme = ({
+  name,
+  baseVariant,
+  variant,
+  shade,
+}: {
+  name: string;
+  baseVariant: BaseVariant;
+  variant: Variant;
+  shade?: Shade;
+}) => {
   const themeName = name
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
     .replace(/stealth/i, '(stealth version)');
-  const template = uiTemplate(themeName, baseVariant, variant, shade);
+  const template = uiTemplate({
+    baseVariant,
+    variant,
+    shade,
+    name: themeName,
+  });
 
   writeFile(
     `themes/${name}-color-theme.json`,
@@ -26,57 +36,183 @@ const createTheme = (
 };
 
 // Lapis
-createTheme('lapis', 'default', 'lapis');
-createTheme('lapis-stealth', 'stealth', 'lapis');
+createTheme({
+  name: 'lapis',
+  baseVariant: 'default',
+  variant: 'lapis',
+});
+createTheme({
+  name: 'lapis-stealth',
+  baseVariant: 'stealth',
+  variant: 'lapis',
+});
 
 // Lapis Amethyst
-createTheme('lapis-amethyst', 'default', 'amethyst');
-createTheme('lapis-amethyst-stealth', 'stealth', 'amethyst');
+createTheme({
+  name: 'lapis-amethyst',
+  baseVariant: 'default',
+  variant: 'amethyst',
+});
+createTheme({
+  name: 'lapis-amethyst-stealth',
+  baseVariant: 'stealth',
+  variant: 'amethyst',
+});
 
 // Lapis Ruby
-createTheme('lapis-ruby', 'default', 'ruby');
-createTheme('lapis-ruby-stealth', 'stealth', 'ruby');
+createTheme({
+  name: 'lapis-ruby',
+  baseVariant: 'default',
+  variant: 'ruby',
+});
+createTheme({
+  name: 'lapis-ruby-stealth',
+  baseVariant: 'stealth',
+  variant: 'ruby',
+});
 
 // Lapis Amber
-createTheme('lapis-amber', 'default', 'amber');
-createTheme('lapis-amber-stealth', 'stealth', 'amber');
+createTheme({
+  name: 'lapis-amber',
+  baseVariant: 'default',
+  variant: 'amber',
+});
+createTheme({
+  name: 'lapis-amber-stealth',
+  baseVariant: 'stealth',
+  variant: 'amber',
+});
 
 // Lapis Peridot
-createTheme('lapis-peridot', 'default', 'peridot');
-createTheme('lapis-peridot-stealth', 'stealth', 'peridot');
+createTheme({
+  name: 'lapis-peridot',
+  baseVariant: 'default',
+  variant: 'peridot',
+});
+createTheme({
+  name: 'lapis-peridot-stealth',
+  baseVariant: 'stealth',
+  variant: 'peridot',
+});
 
 // Lapis Aquamarine
-createTheme('lapis-aquamarine', 'default', 'aquamarine');
-createTheme('lapis-aquamarine-stealth', 'stealth', 'aquamarine');
+createTheme({
+  name: 'lapis-aquamarine',
+  baseVariant: 'default',
+  variant: 'aquamarine',
+});
+createTheme({
+  name: 'lapis-aquamarine-stealth',
+  baseVariant: 'stealth',
+  variant: 'aquamarine',
+});
 
 // Lapis Quartz
-createTheme('lapis-quartz', 'default', 'quartz');
-createTheme('lapis-quartz-stealth', 'stealth', 'quartz');
+createTheme({
+  name: 'lapis-quartz',
+  baseVariant: 'default',
+  variant: 'quartz',
+});
+createTheme({
+  name: 'lapis-quartz-stealth',
+  baseVariant: 'stealth',
+  variant: 'quartz',
+});
 
 // Lapis Dark
-createTheme('lapis-dark', 'default', 'lapis', 'dark');
-createTheme('lapis-dark-stealth', 'stealth', 'lapis', 'dark');
+createTheme({
+  name: 'lapis-dark',
+  baseVariant: 'default',
+  variant: 'lapis',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'lapis',
+  shade: 'dark',
+});
 
 // Lapis Amethyst Dark
-createTheme('lapis-amethyst-dark', 'default', 'amethyst', 'dark');
-createTheme('lapis-amethyst-dark-stealth', 'stealth', 'amethyst', 'dark');
+createTheme({
+  name: 'lapis-amethyst-dark',
+  baseVariant: 'default',
+  variant: 'amethyst',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-amethyst-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'amethyst',
+  shade: 'dark',
+});
 
 // Lapis Ruby Dark
-createTheme('lapis-ruby-dark', 'default', 'ruby', 'dark');
-createTheme('lapis-ruby-dark-stealth', 'stealth', 'ruby', 'dark');
+createTheme({
+  name: 'lapis-ruby-dark',
+  baseVariant: 'default',
+  variant: 'ruby',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-ruby-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'ruby',
+  shade: 'dark',
+});
 
 // Lapis Amber Dark
-createTheme('lapis-amber-dark', 'default', 'amber', 'dark');
-createTheme('lapis-amber-dark-stealth', 'stealth', 'amber', 'dark');
+createTheme({
+  name: 'lapis-amber-dark',
+  baseVariant: 'default',
+  variant: 'amber',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-amber-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'amber',
+  shade: 'dark',
+});
 
 // Lapis Peridot Dark
-createTheme('lapis-peridot-dark', 'default', 'peridot', 'dark');
-createTheme('lapis-peridot-dark-stealth', 'stealth', 'peridot', 'dark');
+createTheme({
+  name: 'lapis-peridot-dark',
+  baseVariant: 'default',
+  variant: 'peridot',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-peridot-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'peridot',
+  shade: 'dark',
+});
 
 // Lapis Aquamarine Dark
-createTheme('lapis-aquamarine-dark', 'default', 'aquamarine', 'dark');
-createTheme('lapis-aquamarine-dark-stealth', 'stealth', 'aquamarine', 'dark');
+createTheme({
+  name: 'lapis-aquamarine-dark',
+  baseVariant: 'default',
+  variant: 'aquamarine',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-aquamarine-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'aquamarine',
+  shade: 'dark',
+});
 
 // Lapis Quartz Dark
-createTheme('lapis-quartz-dark', 'default', 'quartz', 'dark');
-createTheme('lapis-quartz-dark-stealth', 'stealth', 'quartz', 'dark');
+createTheme({
+  name: 'lapis-quartz-dark',
+  baseVariant: 'default',
+  variant: 'quartz',
+  shade: 'dark',
+});
+createTheme({
+  name: 'lapis-quartz-dark-stealth',
+  baseVariant: 'stealth',
+  variant: 'quartz',
+  shade: 'dark',
+});
