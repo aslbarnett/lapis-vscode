@@ -216,3 +216,11 @@ createTheme({
   variant: 'quartz',
   shade: 'dark',
 });
+
+// Lapis Light
+createTheme({
+  name: 'lapis-light',
+  baseVariant: 'default',
+  variant: 'lapis',
+  shade: 'light',
+});
