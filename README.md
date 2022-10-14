@@ -12,8 +12,13 @@
   </a>
 </p>
 
-A blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations (for dark theme)**.<br>
+A blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations (for dark theme)**.
+
+<p>
+
 ✨ **New Lapis Light** theme now available currently with one variation but more coming soon! (scroll down for screenshot) ✨
+
+</p>
 
 <div align="center">
 
