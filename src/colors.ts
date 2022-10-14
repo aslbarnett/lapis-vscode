@@ -11,8 +11,8 @@ export const base = {
 };
 
 export const lightBase = {
-  backgroundDark: '#DBE7FF',
-  background: '#E5EEFF',
+  backgroundDark: '#EBF1FF',
+  background: '#F5F8FF',
   foreground: '#2d3953',
   selectionDark: '#7B8FB7',
   selection: '#9FADC6',
