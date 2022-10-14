@@ -12,11 +12,13 @@
   </a>
 </p>
 
-A dark blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**.
+A blue theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations (for dark theme)**.
+✨ **New Lapis Light** theme now available currently with one variation but more coming soon! (scroll down for screenshot) ✨
 
 <div align="center">
 
 <img width="400px" src="images/lapis-palette.png">
+<img width="400px" src="images/lapis-light-palette.png">
 
 </div>
 
@@ -24,13 +26,21 @@ A dark blue theme for Visual Studio Code using a complimentary color palette for
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/tab-variations.png)
 
+## ✨ NEW Lapis Light!
+
+A new Lapis Light theme is now available!.
+Font used: **Fira Code**
+Font weight used: **600**
+
+![Screenshot](images/demo-light.jpg)
+
 ## 🥋 Stealth Versions
 
 Each version of the Lapis theme comes with a corresponding "stealth version" where the project list items, inactive tab colors and comments have a lower contrast than the default versions.
 
 ![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-index-stealth.png)
 
-## ✨ NEW Lapis Dark!
+## 🌌 Lapis Dark
 
 A new Lapis Dark theme is now available where the colors of the side bar and editor have been reversed to give a higher contrast to the editor.
 
