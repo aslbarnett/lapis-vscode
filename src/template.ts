@@ -11,12 +11,17 @@ export type Variant =
   | 'quartz';
 export type Shade = 'default' | 'dark';
 
-export const uiTemplate = (
-  name: string,
-  baseVariant: BaseVariant,
-  variant: Variant,
-  shade?: Shade
-) => {
+export const uiTemplate = ({
+  name,
+  baseVariant,
+  variant,
+  shade,
+}: {
+  name: string;
+  baseVariant: BaseVariant;
+  variant: Variant;
+  shade?: Shade;
+}) => {
   const primaryBackgroundColor =
     shade === 'dark' ? base.backgroundDark : base.background;
   const secondaryBackgroundColor =
