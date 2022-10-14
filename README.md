@@ -17,8 +17,8 @@ A blue theme for Visual Studio Code using a complimentary color palette for synt
 
 <div align="center">
 
-<img width="400px" src="images/lapis-palette.png">
-<img width="400px" src="images/lapis-light-palette.png">
+<img width="400px" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-palette.png">
+<img width="400px" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-light-palette.png">
 
 </div>
 
@@ -28,11 +28,11 @@ A blue theme for Visual Studio Code using a complimentary color palette for synt
 
 ## ✨ NEW Lapis Light!
 
-A new Lapis Light theme is now available!.
+A new Lapis Light theme is now available!<br>
 Font used: **Fira Code**
 Font weight used: **600**
 
-![Screenshot](images/demo-light.jpg)
+![Screenshot](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/demo-light.jpg)
 
 ## 🥋 Stealth Versions
 
