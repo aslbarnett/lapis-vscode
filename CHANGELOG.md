@@ -2,6 +2,15 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.0"
+
+- Add new Lapis Amethyst Light Theme.
+- Add new Lapis Ruby Light Theme.
+- Add new Lapis Amber Light Theme.
+- Add new Lapis Peridot Light Theme.
+- Add new Lapis Aquamarine Light Theme.
+- Add new Lapis Quartz Light Theme.
+
 ## "1.5.1"
 
 - Lighten background for Lapis Light theme.

@@ -36,11 +36,7 @@ const createTheme = ({
 };
 
 // Lapis
-createTheme({
-  name: 'lapis',
-  baseVariant: 'default',
-  variant: 'lapis',
-});
+createTheme({ name: 'lapis', baseVariant: 'default', variant: 'lapis' });
 createTheme({
   name: 'lapis-stealth',
   baseVariant: 'stealth',
@@ -222,5 +218,53 @@ createTheme({
   name: 'lapis-light',
   baseVariant: 'default',
   variant: 'lapis',
+  shade: 'light',
+});
+
+// Lapis Amethyst Light
+createTheme({
+  name: 'lapis-amethyst-light',
+  baseVariant: 'default',
+  variant: 'amethyst',
+  shade: 'light',
+});
+
+// Lapis Ruby Light
+createTheme({
+  name: 'lapis-ruby-light',
+  baseVariant: 'default',
+  variant: 'ruby',
+  shade: 'light',
+});
+
+// Lapis Amber Light
+createTheme({
+  name: 'lapis-amber-light',
+  baseVariant: 'default',
+  variant: 'amber',
+  shade: 'light',
+});
+
+// Lapis Peridot Light
+createTheme({
+  name: 'lapis-peridot-light',
+  baseVariant: 'default',
+  variant: 'peridot',
+  shade: 'light',
+});
+
+// Lapis Aquamarine Light
+createTheme({
+  name: 'lapis-aquamarine-light',
+  baseVariant: 'default',
+  variant: 'aquamarine',
+  shade: 'light',
+});
+
+// Lapis Onyx Light
+createTheme({
+  name: 'lapis-onyx-light',
+  baseVariant: 'default',
+  variant: 'quartz',
   shade: 'light',
 });

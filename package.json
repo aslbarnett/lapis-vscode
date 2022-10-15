@@ -1,8 +1,8 @@
 {
   "name": "lapis-vscode",
   "displayName": "Lapis",
-  "description": "A blue inspired theme with both light and dark versions",
-  "version": "1.5.1",
+  "description": "A dark blue theme and a light blue theme for VS Code.",
+  "version": "1.6.0",
   "author": {
     "name": "Alex Barnett",
     "email": "aslbarnett@gmail.com"
@@ -28,6 +28,7 @@
     "Themes"
   ],
   "keywords": [
+    "light theme",
     "dark theme",
     "blue theme",
     "themes",
@@ -45,6 +46,36 @@
         "label": "Lapis Light",
         "uiTheme": "vs",
         "path": "./themes/lapis-light-color-theme.json"
+      },
+      {
+        "label": "Lapis Amethyst Light",
+        "uiTheme": "vs",
+        "path": "./themes/lapis-amethyst-light-color-theme.json"
+      },
+      {
+        "label": "Lapis Ruby Light",
+        "uiTheme": "vs",
+        "path": "./themes/lapis-ruby-light-color-theme.json"
+      },
+      {
+        "label": "Lapis Amber Light",
+        "uiTheme": "vs",
+        "path": "./themes/lapis-amber-light-color-theme.json"
+      },
+      {
+        "label": "Lapis Peridot Light",
+        "uiTheme": "vs",
+        "path": "./themes/lapis-peridot-light-color-theme.json"
+      },
+      {
+        "label": "Lapis Aquamarine Light",
+        "uiTheme": "vs",
+        "path": "./themes/lapis-aquamarine-light-color-theme.json"
+      },
+      {
+        "label": "Lapis Onyx Light",
+        "uiTheme": "vs",
+        "path": "./themes/lapis-onyx-light-color-theme.json"
       },
       {
         "label": "Lapis",
