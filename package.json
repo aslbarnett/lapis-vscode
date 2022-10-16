@@ -1,8 +1,8 @@
 {
   "name": "lapis-vscode",
   "displayName": "Lapis",
-  "description": "A dark blue theme and a light blue theme for VS Code.",
-  "version": "1.6.0",
+  "description": "A dark blue theme & light blue theme for Visual Studio Code.",
+  "version": "1.6.1",
   "author": {
     "name": "Alex Barnett",
     "email": "aslbarnett@gmail.com"

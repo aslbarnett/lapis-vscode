@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.1"
+
+- Update theme link buttons in readme.
+
 ## "1.6.0"
 
 - Add new Lapis Amethyst Light Theme.
