@@ -17,7 +17,7 @@ A dark blue inspired theme for Visual Studio Code using a complimentary color pa
 <p>
 
 <p align="center">
-  <a href="#lapis"><img style="width: 150px" alt="lapis button" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-button.png"></a>&nbsp;<a href="#lapis-dark"><img style="width: 150px" alt="lapis dark button" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-dark-button.png"></a>&nbsp;<a href="#new-lapis-light"><img style="width: 150px" alt="lapis light button" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-light-button.png"></a>
+  <a href="#lapis"><img style="width: 150px" alt="lapis button" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-button.png"></a>&nbsp;&nbsp;<a href="#lapis-dark"><img style="width: 150px" alt="lapis dark button" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-dark-button.png"></a>&nbsp;&nbsp;<a href="#new-lapis-light"><img style="width: 150px" alt="lapis light button" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/lapis-light-button.png"></a>
 </p>
 
 ## 🏙 Lapis
