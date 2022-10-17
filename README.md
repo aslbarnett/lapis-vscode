@@ -10,10 +10,6 @@
   <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
     <img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/AlexBarnett.lapis-vscode?label=Version&color=83ABFC&labelColor=1B1F27">
   </a>&nbsp;
-
-<a href="https://github.com/aslbarnett/lapis-vscode">
-    <img alt="Github Stars" src="https://img.shields.io/github/stars/aslbarnett/lapis-vscode?label=Github%20Stars&color=D483FC&labelColor=1B1F27">
-  </a>
 </p>
 
 A dark blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**.
@@ -101,3 +97,9 @@ If you see any issues with the theme, please [open an issue](https://github.com/
 ## 💡 Inspiration
 
 Inspired by Night Owl, Halcyon and Dracula.
+
+<p align="center">
+<a href="https://github.com/aslbarnett/lapis-vscode/blob/main/LICENSE">
+    <img alt="Licence MIT" src="https://img.shields.io/github/license/aslbarnett/lapis-vscode?label=License&color=83ABFC&labelColor=1B1F27">
+  </a>
+</p>
