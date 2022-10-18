@@ -1,10 +1,10 @@
 import {
   base,
-  lightBase,
+  baseLightTheme,
   lightPalette,
-  lightPaletteLight,
+  lightPaletteLightTheme,
   palette,
-  paletteLight,
+  paletteLightTheme,
 } from './colors';
 
 export type BaseVariant = 'default' | 'stealth';
@@ -29,10 +29,10 @@ export const uiTemplate = ({
   variant: Variant;
   shade?: Shade;
 }) => {
-  const selectedBase = shade === 'light' ? lightBase : base;
+  const selectedBase = shade === 'light' ? baseLightTheme : base;
   const selectedPalette = shade === 'light' ? lightPalette : palette;
   const selectedPaletteLight =
-    shade === 'light' ? lightPaletteLight : paletteLight;
+    shade === 'light' ? lightPaletteLightTheme : paletteLightTheme;
   const primaryBackgroundColor =
     shade === 'dark' ? selectedBase.backgroundDark : selectedBase.background;
   const secondaryBackgroundColor =

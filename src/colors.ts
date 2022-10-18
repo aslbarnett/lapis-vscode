@@ -10,7 +10,7 @@ export const base = {
   shadow: '#00030F',
 };
 
-export const lightBase = {
+export const baseLightTheme = {
   backgroundDark: '#EBF1FF',
   background: '#F5F8FF',
   foreground: '#2d3953',
@@ -32,7 +32,7 @@ export const lightPalette = {
   quartz: '#1B1F27',
 };
 
-export const lightPaletteLight = {
+export const lightPaletteLightTheme = {
   lapis: '#4775D1',
   amethyst: '#A347D1',
   ruby: '#D14775',
@@ -52,7 +52,7 @@ export const palette = {
   quartz: '#d6e2ff',
 };
 
-export const paletteLight = {
+export const paletteLightTheme = {
   lapis: '#9cbcfc',
   amethyst: '#dc9cfc',
   ruby: '#fc9cbc',
