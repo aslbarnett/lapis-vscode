@@ -86,6 +86,7 @@ Each dark version of the Lapis theme comes with a corresponding "stealth version
 
 ## 🛳 Lapis Theme Ports
 
+- [Lapis JetBrains IDEs](https://plugins.jetbrains.com/plugin/20171-lapis)
 - [Lapis Terminal.app](https://github.com/aslbarnett/lapis-theme-terminal-app)
 - [Lapis Slack](https://github.com/aslbarnett/lapis-theme-slack)
 - [Lapis Google Chrome](https://chrome.google.com/webstore/detail/lapis-chrome-theme/hmcmhgomamidaaodladnploplghibodb)
