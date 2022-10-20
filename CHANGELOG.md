@@ -4,6 +4,10 @@ All notable changes to the "lapis" extension will be documented in this file.
 
 ## "1.6.6"
 
+- Add helper functions for colors.
+
+## "1.6.6"
+
 - Add JetBrains IDE link.
 
 ## "1.6.5"
