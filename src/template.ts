@@ -682,6 +682,13 @@ export const uiTemplate = ({
         },
       },
       {
+        name: 'Go Function',
+        scope: 'keyword.function.go',
+        settings: {
+          foreground: colorPalette.lapis,
+        },
+      },
+      {
         name: 'CSS Class and Support',
         scope: [
           'source.css support.type.property-name',

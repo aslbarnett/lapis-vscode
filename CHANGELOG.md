@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.8"
+
+- Fix Golang function keyword color.
+
 ## "1.6.7"
 
 - Add helper functions for colors.
