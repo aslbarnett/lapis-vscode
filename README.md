@@ -9,7 +9,11 @@
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
     <img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/AlexBarnett.lapis-vscode?label=Version&color=83ABFC&labelColor=1B1F27">
-  </a>&nbsp;
+  </a>
+
+  <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
+    <img alt="Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/AlexBarnett.lapis-vscode?label=Installs&color=D483FC&labelColor=1B1F27">
+  </a>
 </p>
 
 A dark blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**.
