@@ -12,6 +12,8 @@
   <p align="center">A dark blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and <strong>7 accent / button color variations</strong>.</p>
 </p>
 
+![Screenshot](images/lapis-variations.jpg)
+
 <p>
 
 <p align="center">
