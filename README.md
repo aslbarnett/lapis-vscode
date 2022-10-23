@@ -1,22 +1,16 @@
-<p align="center"><img style="width: 200px" src="https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/logo.png" /></p>
-
-<div align="center">
-
-# Lapis Theme • Visual Studio Code
-
-</div>
+![Lapis Visual Studio Code Header](https://raw.githubusercontent.com/aslbarnett/lapis-vscode/main/images/header.jpg)
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
-    <img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/AlexBarnett.lapis-vscode?label=Version&color=83ABFC&labelColor=1B1F27">
+    <img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/AlexBarnett.lapis-vscode?label=Version&color=83ABFC&labelColor=1B1F27&style=for-the-badge&logo=github">
   </a>
 
   <a href="https://marketplace.visualstudio.com/items?itemName=AlexBarnett.lapis-vscode">
-    <img alt="Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/AlexBarnett.lapis-vscode?label=Installs&color=D483FC&labelColor=1B1F27">
+    <img alt="Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/AlexBarnett.lapis-vscode?label=Installs&color=D483FC&labelColor=1B1F27&style=for-the-badge&logo=visualstudio">
   </a>
-</p>
 
-A dark blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and **7 accent / button color variations**.
+  <p align="center">A dark blue inspired theme for Visual Studio Code using a complimentary color palette for syntax and <strong>7 accent / button color variations</strong>.</p>
+</p>
 
 <p>
 
@@ -102,9 +96,3 @@ If you see any issues with the theme, please [open an issue](https://github.com/
 ## 💡 Inspiration
 
 Inspired by Night Owl, Halcyon and Dracula.
-
-<p align="center">
-<a href="https://github.com/aslbarnett/lapis-vscode/blob/main/LICENSE">
-    <img alt="Licence MIT" src="https://img.shields.io/github/license/aslbarnett/lapis-vscode?label=License&color=83ABFC&labelColor=1B1F27">
-  </a>
-</p>
