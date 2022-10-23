@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.10"
+
+- Update Lapis header.
+
 ## "1.6.9"
 
 - Add installs badge.
