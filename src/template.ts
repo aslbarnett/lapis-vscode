@@ -1,16 +1,4 @@
-import {
-  base,
-  baseLightTheme,
-  lightPalette,
-  lightPaletteLightTheme,
-  palette,
-  paletteLightTheme,
-} from './colors';
-import {
-  getBasePalette,
-  getColorPalette,
-  getLightColorPalette,
-} from './helpers';
+import { generateColorPalette } from './helpers';
 
 export type BaseVariant = 'default' | 'stealth';
 export type Variant =
@@ -34,13 +22,13 @@ export const uiTemplate = ({
   variant: Variant;
   shade?: Shade;
 }) => {
-  const basePalette = getBasePalette(shade);
-  const colorPalette = getColorPalette(shade);
-  const lightColorPalette = getLightColorPalette(shade);
-  const primaryBackgroundColor =
-    shade === 'dark' ? basePalette.backgroundDark : basePalette.background;
-  const secondaryBackgroundColor =
-    shade === 'dark' ? basePalette.background : basePalette.backgroundDark;
+  const {
+    basePalette,
+    colorPalette,
+    lightColorPalette,
+    primaryBgColor: primaryBackgroundColor,
+    secondaryBgColor: secondaryBackgroundColor,
+  } = generateColorPalette(shade);
 
   function getBaseColor(defaultColor: string, stealthColor: string): string {
     return baseVariant === 'stealth' ? stealthColor : defaultColor;

@@ -2,7 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
-## "1.6.10"
+## "1.6.12"
+
+- Refactor palette code.
+
+## "1.6.11"
 
 - Update themes in readme.
 
