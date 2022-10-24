@@ -8,26 +8,17 @@ import {
   paletteLightTheme,
 } from './colors';
 
-export const getBasePalette = (shade?: Shade) => {
-  if (shade === 'light') {
-    return baseLightTheme;
-  }
+export const generateColorPalette = (shade?: Shade) => {
+  const basePalette = shade === 'light' ? baseLightTheme : base;
 
-  return base;
-};
-
-export const getColorPalette = (shade?: Shade) => {
-  if (shade === 'light') {
-    return lightPalette;
-  }
-
-  return palette;
-};
-
-export const getLightColorPalette = (shade?: Shade) => {
-  if (shade === 'light') {
-    return lightPaletteLightTheme;
-  }
-
-  return paletteLightTheme;
+  return {
+    basePalette: basePalette,
+    colorPalette: shade === 'light' ? lightPalette : palette,
+    lightColorPalette:
+      shade === 'light' ? lightPaletteLightTheme : paletteLightTheme,
+    primaryBgColor:
+      shade === 'dark' ? basePalette.backgroundDark : basePalette.background,
+    secondaryBgColor:
+      shade === 'dark' ? basePalette.background : basePalette.backgroundDark,
+  };
 };
