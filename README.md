@@ -42,3 +42,9 @@ If you see any issues with the theme, please [open an issue](https://github.com/
 ## 💡 Inspiration
 
 Inspired by Night Owl, Halcyon and Dracula.
+
+<p align="center">
+  <a href="https://github.com/aslbarnett/lapis-vscode/blob/main/LICENSE">
+    <img alt="Licence MIT" src="https://img.shields.io/github/license/aslbarnett/lapis-vscode?label=License&color=FCD483&labelColor=1B1F27&style=for-the-badge">
+  </a>
+</p>

@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.13"
+
+- Add MIT badge.
+
 ## "1.6.12"
 
 - Refactor palette code.
