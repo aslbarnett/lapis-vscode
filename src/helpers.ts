@@ -1,21 +1,18 @@
 import { Shade } from './template';
-import {
-  base,
-  baseLightTheme,
-  lightPalette,
-  lightPaletteLightTheme,
-  palette,
-  paletteLightTheme,
-} from './colors';
+import { defaultTheme, lightTheme } from './colors';
 
 export const generateColorPalette = (shade?: Shade) => {
-  const basePalette = shade === 'light' ? baseLightTheme : base;
+  const basePalette =
+    shade === 'light' ? lightTheme.editor : defaultTheme.editor;
 
   return {
     basePalette: basePalette,
-    colorPalette: shade === 'light' ? lightPalette : palette,
+    colorPalette:
+      shade === 'light'
+        ? lightTheme.syntax.default
+        : defaultTheme.syntax.default,
     lightColorPalette:
-      shade === 'light' ? lightPaletteLightTheme : paletteLightTheme,
+      shade === 'light' ? lightTheme.syntax.light : defaultTheme.syntax.light,
     primaryBgColor:
       shade === 'dark' ? basePalette.backgroundDark : basePalette.background,
     secondaryBgColor:
