@@ -2,7 +2,11 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
-## "1.6.13"
+## "1.6.15"
+
+- Refactor base tokens.
+
+## "1.6.14"
 
 - Refactor colors.
 

@@ -1,4 +1,5 @@
 import { generateColorPalette } from './helpers';
+import base from './editor/base';
 
 export type BaseVariant = 'default' | 'stealth';
 export type Variant =
@@ -38,12 +39,7 @@ export const uiTemplate = ({
     name: name,
     type: 'dark',
     colors: {
-      focusBorder: `${basePalette.selection}50`,
-      foreground: basePalette.foreground,
-      'widget.shadow': basePalette.shadow,
-      'selection.background': `${basePalette.selection}70`,
-      descriptionForeground: basePalette.foreground,
-      errorForeground: colorPalette.ruby,
+      ...base(basePalette, colorPalette),
 
       // Editor Group
       'editorGroup.border': basePalette.selection,
