@@ -1,5 +1,5 @@
-import { Shade } from './template';
 import { defaultTheme, lightTheme } from './colors';
+import { Shade } from './types';
 
 export const generateColorPalette = (shade?: Shade) => {
   const basePalette =

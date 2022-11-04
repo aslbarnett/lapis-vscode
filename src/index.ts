@@ -1,5 +1,6 @@
 import { writeFile } from 'fs';
-import { uiTemplate, BaseVariant, Variant, Shade } from './template';
+import { uiTemplate } from './template';
+import { Shade, Variant, BaseVariant } from './types';
 
 const createTheme = ({
   name,
