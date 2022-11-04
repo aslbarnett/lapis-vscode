@@ -19,3 +19,16 @@ export type ColorPalette = {
   aquamarine: string;
   quartz: string;
 };
+
+export type BaseVariant = 'default' | 'stealth';
+
+export type Variant =
+  | 'lapis'
+  | 'amethyst'
+  | 'ruby'
+  | 'amber'
+  | 'peridot'
+  | 'aquamarine'
+  | 'quartz';
+
+export type Shade = 'default' | 'dark' | 'light';

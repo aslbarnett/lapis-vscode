@@ -1,16 +1,6 @@
 import { generateColorPalette } from './helpers';
 import base from './editor/base';
-
-export type BaseVariant = 'default' | 'stealth';
-export type Variant =
-  | 'lapis'
-  | 'amethyst'
-  | 'ruby'
-  | 'amber'
-  | 'peridot'
-  | 'aquamarine'
-  | 'quartz';
-export type Shade = 'default' | 'dark' | 'light';
+import { Shade, BaseVariant, Variant } from './types';
 
 export const uiTemplate = ({
   name,

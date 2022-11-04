@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.16"
+
+- Refactor types.
+
 ## "1.6.15"
 
 - Refactor base tokens.
