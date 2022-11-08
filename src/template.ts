@@ -1,4 +1,4 @@
-import { generateColorPalette } from './helpers';
+import { alpha, generateColorPalette } from './helpers';
 import base from './editor/base';
 import { Shade, BaseVariant, Variant } from './types';
 
@@ -45,20 +45,20 @@ export const uiTemplate = ({
       'editorPane.background': primaryBackgroundColor,
       'editor.background': primaryBackgroundColor,
       'editor.foreground': basePalette.foreground,
-      'editor.selectionBackground': `${basePalette.selection}60`,
+      'editor.selectionBackground': alpha(basePalette.selection, 0.6),
       'editor.selectionForeground': basePalette.foreground,
-      'editor.inactiveSelectionBackground': `${basePalette.selection}60`,
-      'editor.selectionHighlightBackground': `${basePalette.selection}60`,
-      'editor.wordHighlightBackground': `${basePalette.selection}60`,
-      'editor.wordHighlightStrongBackground': `${basePalette.selection}80`,
-      'editor.findMatchBackground': `${basePalette.selection}50`,
-      'editor.findMatchHighlightBackground': `${basePalette.selection}50`,
-      'editor.findRangeHighlightBackground': `${basePalette.selection}50`,
+      'editor.inactiveSelectionBackground': alpha(basePalette.selection, 0.6),
+      'editor.selectionHighlightBackground': alpha(basePalette.selection, 0.6),
+      'editor.wordHighlightBackground': alpha(basePalette.selection, 0.6),
+      'editor.wordHighlightStrongBackground': alpha(basePalette.selection, 0.8),
+      'editor.findMatchBackground': alpha(basePalette.selection, 0.5),
+      'editor.findMatchHighlightBackground': alpha(basePalette.selection, 0.5),
+      'editor.findRangeHighlightBackground': alpha(basePalette.selection, 0.5),
       'editor.findMatchBorder': colorPalette.lapis,
-      'editor.hoverHighlightBackground': `${basePalette.selection}50`,
-      'editor.lineHighlightBackground': `${basePalette.selection}50`,
-      'editor.lineHighlightBorder': `${basePalette.selection}50`,
-      'editor.rangeHighlightBackground': `${basePalette.selection}50`,
+      'editor.hoverHighlightBackground': alpha(basePalette.selection, 0.5),
+      'editor.lineHighlightBackground': alpha(basePalette.selection, 0.5),
+      'editor.lineHighlightBorder': alpha(basePalette.selection, 0.5),
+      'editor.rangeHighlightBackground': alpha(basePalette.selection, 0.5),
       'editorLineNumber.foreground':
         shade === 'light'
           ? basePalette.text
@@ -68,22 +68,25 @@ export const uiTemplate = ({
       'editorCursor.background': primaryBackgroundColor,
       'editorCursor.foreground': colorPalette[variant],
       'editorLink.activeForeground': colorPalette.lapis,
-      'editorWhitespace.foreground': `${basePalette.selection}50`,
+      'editorWhitespace.foreground': alpha(basePalette.selection, 0.5),
       'editorIndentGuide.background':
         shade === 'light' ? basePalette.selection : basePalette.selectionDark,
       'editorIndentGuide.activeBackground': colorPalette[variant],
       'editorInlayHint.background': primaryBackgroundColor,
-      'editorInlayHint.foreground': `${basePalette.selection}99`,
+      'editorInlayHint.foreground': alpha(basePalette.selection, 0.99),
       'editorRuler.foreground': basePalette.selection,
       'editorCodeLens.foreground': basePalette.foreground,
-      'editorBracketMatch.background': `${basePalette.selection}60`,
+      'editorBracketMatch.background': alpha(basePalette.selection, 0.6),
       'editorBracketMatch.border': colorPalette.lapis,
 
       // Editor Overview Ruler
       'editorOverviewRuler.border': basePalette.selection,
       'editorOverviewRuler.findMatchForeground': colorPalette.lapis,
       'editorOverviewRuler.rangeHighlightForeground': basePalette.selection,
-      'editorOverviewRuler.selectionHighlightForeground': `${basePalette.selection}50`,
+      'editorOverviewRuler.selectionHighlightForeground': alpha(
+        basePalette.selection,
+        0.5
+      ),
       'editorOverviewRuler.wordHighlightForeground': basePalette.selection,
       'editorOverviewRuler.wordHighlightStrongForeground':
         basePalette.selection,
@@ -119,10 +122,10 @@ export const uiTemplate = ({
       'editorMarkerNavigationInfo.background': colorPalette.lapis,
 
       // Diff Editor
-      'diffEditor.insertedTextBackground': `${colorPalette.peridot}22`,
-      'diffEditor.insertedTextBorder': `${colorPalette.peridot}44`,
-      'diffEditor.removedTextBackground': `${colorPalette.ruby}22`,
-      'diffEditor.removedTextBorder': `${colorPalette.ruby}44`,
+      'diffEditor.insertedTextBackground': alpha(colorPalette.peridot, 0.22),
+      'diffEditor.insertedTextBorder': alpha(colorPalette.peridot, 0.44),
+      'diffEditor.removedTextBackground': alpha(colorPalette.ruby, 0.22),
+      'diffEditor.removedTextBorder': alpha(colorPalette.ruby, 0.44),
       'diffEditor.border': basePalette.selection,
 
       // Editor Error
@@ -149,7 +152,7 @@ export const uiTemplate = ({
       // Button
       'button.background': colorPalette[variant],
       'button.foreground': primaryBackgroundColor,
-      'button.hoverBackground': `${colorPalette[variant]}99`,
+      'button.hoverBackground': alpha(colorPalette[variant], 0.99),
 
       // Dropdown
       'dropdown.background': basePalette.selection,
@@ -161,7 +164,7 @@ export const uiTemplate = ({
       'input.background': primaryBackgroundColor,
       'input.border': basePalette.selection,
       'input.foreground': basePalette.foreground,
-      'input.placeholderForeground': `${basePalette.selection}50`,
+      'input.placeholderForeground': alpha(basePalette.selection, 0.5),
       'inputOption.activeBorder': basePalette.selection,
 
       // Input Validation
@@ -177,9 +180,9 @@ export const uiTemplate = ({
 
       // Scrollbar
       'scrollbar.shadow': basePalette.shadow,
-      'scrollbarSlider.activeBackground': `${basePalette.selection}50`,
-      'scrollbarSlider.background': `${basePalette.selection}60`,
-      'scrollbarSlider.hoverBackground': `${basePalette.selection}99`,
+      'scrollbarSlider.activeBackground': alpha(basePalette.selection, 0.5),
+      'scrollbarSlider.background': alpha(basePalette.selection, 0.6),
+      'scrollbarSlider.hoverBackground': alpha(basePalette.selection, 0.99),
 
       // Badge
       'badge.foreground': primaryBackgroundColor,
@@ -191,30 +194,30 @@ export const uiTemplate = ({
       // List
       'list.activeSelectionBackground':
         shade === 'light'
-          ? `${basePalette.selectionDark}70`
-          : `${basePalette.selectionDark}90`,
+          ? alpha(basePalette.selectionDark, 0.7)
+          : alpha(basePalette.selectionDark, 0.9),
       'list.activeSelectionForeground': basePalette.foreground,
       'list.dropBackground':
         shade === 'light'
-          ? `${basePalette.selectionDark}70`
-          : `${basePalette.selectionDark}90`,
+          ? alpha(basePalette.selectionDark, 0.7)
+          : alpha(basePalette.selectionDark, 0.9),
       'list.focusBackground':
         shade === 'light'
-          ? `${basePalette.selectionDark}70`
-          : `${basePalette.selectionDark}90`,
+          ? alpha(basePalette.selectionDark, 0.7)
+          : alpha(basePalette.selectionDark, 0.9),
       'list.focusForeground': basePalette.foreground,
       'list.highlightForeground': basePalette.foreground,
-      'list.hoverBackground': `${basePalette.selection}50`,
+      'list.hoverBackground': alpha(basePalette.selection, 0.5),
       'list.hoverForeground': basePalette.textMid,
       'list.inactiveSelectionBackground':
         shade === 'light'
-          ? `${basePalette.selectionDark}70`
-          : `${basePalette.selectionDark}90`,
+          ? alpha(basePalette.selectionDark, 0.7)
+          : alpha(basePalette.selectionDark, 0.9),
       'list.inactiveSelectionForeground': basePalette.foreground,
       'list.inactiveFocusBackground':
         shade === 'light'
-          ? `${basePalette.selectionDark}70`
-          : `${basePalette.selectionDark}90`,
+          ? alpha(basePalette.selectionDark, 0.7)
+          : alpha(basePalette.selectionDark, 0.9),
       'list.invalidItemForeground': colorPalette.ruby,
       'list.errorForeground': colorPalette.ruby,
       'list.warningForeground': colorPalette.amber,
@@ -270,17 +273,20 @@ export const uiTemplate = ({
 
       // Peek View
       'peekView.border': colorPalette[variant],
-      'peekViewEditor.background': `${basePalette.selectionDark}50`,
+      'peekViewEditor.background': alpha(basePalette.selectionDark, 0.5),
       'peekViewEditorGutter.background': primaryBackgroundColor,
-      'peekViewEditor.matchHighlightBackground': `${basePalette.selection}50`,
+      'peekViewEditor.matchHighlightBackground': alpha(
+        basePalette.selection,
+        0.5
+      ),
       'peekViewEditor.matchHighlightBorder': basePalette.foreground,
-      'peekViewResult.background': `${basePalette.selectionDark}50`,
+      'peekViewResult.background': alpha(basePalette.selectionDark, 0.5),
       'peekViewResult.fileForeground': basePalette.foreground,
       'peekViewResult.lineForeground': colorPalette[variant],
       'peekViewResult.matchHighlightBackground': basePalette.selectionDark,
       'peekViewResult.selectionBackground': basePalette.selection,
       'peekViewResult.selectionForeground': basePalette.foreground,
-      'peekViewTitle.background': `${basePalette.selectionDark}50`,
+      'peekViewTitle.background': alpha(basePalette.selectionDark, 0.5),
       'peekViewTitleDescription.foreground': basePalette.foreground,
       'peekViewTitleLabel.foreground': basePalette.foreground,
 
@@ -293,13 +299,13 @@ export const uiTemplate = ({
       'checkbox.border': primaryBackgroundColor,
 
       // Merge
-      'merge.currentHeaderBackground': `${colorPalette.lapis}70`,
-      'merge.currentContentBackground': `${colorPalette.lapis}22`,
-      'merge.incomingHeaderBackground': `${colorPalette.peridot}70`,
-      'merge.incomingContentBackground': `${colorPalette.peridot}22`,
+      'merge.currentHeaderBackground': alpha(colorPalette.lapis, 0.7),
+      'merge.currentContentBackground': alpha(colorPalette.lapis, 0.22),
+      'merge.incomingHeaderBackground': alpha(colorPalette.peridot, 0.7),
+      'merge.incomingContentBackground': alpha(colorPalette.peridot, 0.22),
       'merge.border': basePalette.selection,
-      'merge.commonHeaderBackground': `${basePalette.selection}70`,
-      'merge.commonContentBackground': `${basePalette.selection}60`,
+      'merge.commonHeaderBackground': alpha(basePalette.selection, 0.7),
+      'merge.commonContentBackground': alpha(basePalette.selection, 0.6),
 
       // Panel
       'panel.background': primaryBackgroundColor,
@@ -358,7 +364,10 @@ export const uiTemplate = ({
       // Extension Button
       'extensionButton.prominentBackground': colorPalette[variant],
       'extensionButton.prominentForeground': primaryBackgroundColor,
-      'extensionButton.prominentHoverBackground': `${basePalette.selection}50`,
+      'extensionButton.prominentHoverBackground': alpha(
+        basePalette.selection,
+        0.5
+      ),
 
       // Picker Group
       'pickerGroup.border': basePalette.selection,
@@ -384,7 +393,7 @@ export const uiTemplate = ({
       'terminal.ansiRed': colorPalette.ruby,
       'terminal.ansiWhite': basePalette.foreground,
       'terminal.ansiYellow': colorPalette.amber,
-      'terminal.selectionBackground': `${basePalette.selection}33`,
+      'terminal.selectionBackground': alpha(basePalette.selection, 0.33),
       'terminalCursor.background': colorPalette[variant],
       'terminalCursor.foreground': colorPalette[variant],
 
@@ -394,7 +403,7 @@ export const uiTemplate = ({
 
       // Welcome Page
       'welcomePage.buttonBackground': basePalette.selection,
-      'welcomePage.buttonHoverBackground': `${basePalette.selection}99`,
+      'welcomePage.buttonHoverBackground': alpha(basePalette.selection, 0.99),
       'walkThrough.embeddedEditorBackground': primaryBackgroundColor,
 
       // Git Decoration

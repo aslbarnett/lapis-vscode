@@ -19,3 +19,7 @@ export const generateColorPalette = (shade?: Shade) => {
       shade === 'dark' ? basePalette.background : basePalette.backgroundDark,
   };
 };
+
+export const alpha = (color: string, value: number) => {
+  return `${color}${value * 100}`;
+};

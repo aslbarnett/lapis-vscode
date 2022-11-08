@@ -1,3 +1,4 @@
+import { alpha } from '../helpers';
 import { BasePalette, ColorPalette } from '../types';
 
 export default function base(
@@ -5,10 +6,10 @@ export default function base(
   colorPalette: ColorPalette
 ) {
   return {
-    focusBorder: `${basePalette.selection}50`,
+    focusBorder: alpha(basePalette.selection, 0.5),
     foreground: basePalette.foreground,
     'widget.shadow': basePalette.shadow,
-    'selection.background': `${basePalette.selection}70`,
+    'selection.background': alpha(basePalette.selection, 0.7),
     descriptionForeground: basePalette.foreground,
     errorForeground: colorPalette.ruby,
   };
