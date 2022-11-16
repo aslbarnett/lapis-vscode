@@ -529,95 +529,7 @@ export default (
         foreground: colorPalette.ruby,
       },
     },
-    {
-      name: 'Markdown - Plain',
-      scope: [
-        'text.html.markdown',
-        'punctuation.definition.list_item.markdown',
-      ],
-      settings: {
-        foreground: basePalette.foreground,
-      },
-    },
-    {
-      name: 'Markdown - Markup Raw Inline',
-      scope: [
-        'text.html.markdown markup.raw.inline',
-        'text.html.markdown markup.inline.raw.string.markdown',
-      ],
-      settings: {
-        foreground: colorPalette.ruby,
-      },
-    },
-    {
-      name: 'Markdown - Line Break',
-      scope: ['text.html.markdown meta.dummy.line-break'],
-      settings: {
-        foreground: basePalette.foreground,
-      },
-    },
-    {
-      name: 'Markdown - Heading',
-      scope: [
-        'markdown.heading',
-        'markup.heading',
-        'markup.heading entity.name',
-        'markup.heading.markdown',
-        'punctuation.definition.heading.markdown',
-      ],
-      settings: {
-        foreground: colorPalette.peridot,
-      },
-    },
-    {
-      name: 'Markdown - Blockquote',
-      scope: ['markup.quote', 'punctuation.definition.blockquote.markdown'],
-      settings: {
-        fontStyle: 'italic',
-        foreground: colorPalette.ruby,
-      },
-    },
-    {
-      name: 'Markdown - Link',
-      scope: ['string.other.link.title.markdown'],
-      settings: {
-        fontStyle: 'underline',
-        foreground: colorPalette.amber,
-      },
-    },
-    {
-      name: 'Markdown - Raw Block Fenced',
-      scope: ['markup.raw.block.fenced.markdown'],
-      settings: {
-        foreground: basePalette.foreground,
-      },
-    },
-    {
-      name: 'Markdown - Fenced Bode Block',
-      scope: [
-        'punctuation.definition.fenced.markdown',
-        'variable.language.fenced.markdown',
-      ],
-      settings: {
-        foreground: basePalette.foreground,
-      },
-    },
-    {
-      name: 'Markdown - Fenced Language',
-      scope: ['variable.language.fenced.markdown'],
-      settings: {
-        fontStyle: '',
-        foreground: basePalette.foreground,
-      },
-    },
-    {
-      name: 'Markdown - Separator',
-      scope: ['meta.separator'],
-      settings: {
-        fontStyle: '',
-        foreground: basePalette.foreground,
-      },
-    },
+    ...markdownTokens(basePalette, colorPalette),
     {
       scope: 'token.info-token',
       settings: {
@@ -656,3 +568,95 @@ export default (
     },
   ];
 };
+
+const markdownTokens = (
+  basePalette: BasePalette,
+  colorPalette: ColorPalette
+) => [
+  {
+    name: 'Markdown - Plain',
+    scope: ['text.html.markdown', 'punctuation.definition.list_item.markdown'],
+    settings: {
+      foreground: basePalette.foreground,
+    },
+  },
+  {
+    name: 'Markdown - Markup Raw Inline',
+    scope: [
+      'text.html.markdown markup.raw.inline',
+      'text.html.markdown markup.inline.raw.string.markdown',
+    ],
+    settings: {
+      foreground: colorPalette.ruby,
+    },
+  },
+  {
+    name: 'Markdown - Line Break',
+    scope: ['text.html.markdown meta.dummy.line-break'],
+    settings: {
+      foreground: basePalette.foreground,
+    },
+  },
+  {
+    name: 'Markdown - Heading',
+    scope: [
+      'markdown.heading',
+      'markup.heading',
+      'markup.heading entity.name',
+      'markup.heading.markdown',
+      'punctuation.definition.heading.markdown',
+    ],
+    settings: {
+      foreground: colorPalette.peridot,
+    },
+  },
+  {
+    name: 'Markdown - Blockquote',
+    scope: ['markup.quote', 'punctuation.definition.blockquote.markdown'],
+    settings: {
+      fontStyle: 'italic',
+      foreground: colorPalette.ruby,
+    },
+  },
+  {
+    name: 'Markdown - Link',
+    scope: ['string.other.link.title.markdown'],
+    settings: {
+      fontStyle: 'underline',
+      foreground: colorPalette.amber,
+    },
+  },
+  {
+    name: 'Markdown - Raw Block Fenced',
+    scope: ['markup.raw.block.fenced.markdown'],
+    settings: {
+      foreground: basePalette.foreground,
+    },
+  },
+  {
+    name: 'Markdown - Fenced Bode Block',
+    scope: [
+      'punctuation.definition.fenced.markdown',
+      'variable.language.fenced.markdown',
+    ],
+    settings: {
+      foreground: basePalette.foreground,
+    },
+  },
+  {
+    name: 'Markdown - Fenced Language',
+    scope: ['variable.language.fenced.markdown'],
+    settings: {
+      fontStyle: '',
+      foreground: basePalette.foreground,
+    },
+  },
+  {
+    name: 'Markdown - Separator',
+    scope: ['meta.separator'],
+    settings: {
+      fontStyle: '',
+      foreground: basePalette.foreground,
+    },
+  },
+];
