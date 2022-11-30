@@ -530,30 +530,7 @@ export default (
       },
     },
     ...markdownTokens(basePalette, colorPalette),
-    {
-      scope: 'token.info-token',
-      settings: {
-        foreground: colorPalette.ruby,
-      },
-    },
-    {
-      scope: 'token.warn-token',
-      settings: {
-        foreground: colorPalette.amber,
-      },
-    },
-    {
-      scope: 'token.error-token',
-      settings: {
-        foreground: colorPalette.ruby,
-      },
-    },
-    {
-      scope: 'token.debug-token',
-      settings: {
-        foreground: colorPalette.amethyst,
-      },
-    },
+    ...tokenStatusTokens(colorPalette),
     {
       scope: ['storage.type.error.go'],
       settings: {
@@ -657,6 +634,33 @@ const markdownTokens = (
     settings: {
       fontStyle: '',
       foreground: basePalette.foreground,
+    },
+  },
+];
+
+const tokenStatusTokens = (colorPalette: ColorPalette) => [
+  {
+    scope: 'token.info-token',
+    settings: {
+      foreground: colorPalette.ruby,
+    },
+  },
+  {
+    scope: 'token.warn-token',
+    settings: {
+      foreground: colorPalette.amber,
+    },
+  },
+  {
+    scope: 'token.error-token',
+    settings: {
+      foreground: colorPalette.ruby,
+    },
+  },
+  {
+    scope: 'token.debug-token',
+    settings: {
+      foreground: colorPalette.amethyst,
     },
   },
 ];
