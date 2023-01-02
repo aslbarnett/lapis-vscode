@@ -32,3 +32,10 @@ export type Variant =
   | 'quartz';
 
 export type Shade = 'default' | 'dark' | 'light';
+
+export type Theme = {
+  name: string;
+  baseVariant: BaseVariant;
+  variant: Variant;
+  shade?: Shade;
+};
