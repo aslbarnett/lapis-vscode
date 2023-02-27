@@ -50,7 +50,7 @@ export const uiTemplate = ({
       'editorPane.background': primaryBackgroundColor,
       'editor.background': primaryBackgroundColor,
       'editor.foreground': basePalette.foreground,
-      'editor.selectionBackground': alpha(colorPalette.amethyst, 0.3),
+      'editor.selectionBackground': alpha(colorPalette.lapis, baseVariant === 'stealth' ? 0.3 : 0.6),
       'editor.selectionForeground': basePalette.foreground,
       'editor.inactiveSelectionBackground': alpha(basePalette.selection, 0.6),
       'editor.selectionHighlightBackground': alpha(basePalette.selection, 0.6),
