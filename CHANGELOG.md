@@ -4,7 +4,7 @@ All notable changes to the "lapis" extension will be documented in this file.
 
 ## "1.6.22"
 
-- Update code highlight colors so it's more obvious when highlighting code.
+- Change selection background color so it stands out more for the user.
 
 ## "1.6.21"
 

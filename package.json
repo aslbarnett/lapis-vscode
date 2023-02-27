@@ -43,11 +43,6 @@
   "contributes": {
     "themes": [
       {
-        "label": "Lapis",
-        "uiTheme": "vs-dark",
-        "path": "./themes/lapis-color-theme.json"
-      },
-      {
         "label": "Lapis Light",
         "uiTheme": "vs",
         "path": "./themes/lapis-light-color-theme.json"
