@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.6.22"
+
+- Change selection background color so it stands out more for the user.
+
 ## "1.6.21"
 
 - Update theme generation.

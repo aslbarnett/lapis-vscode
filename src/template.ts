@@ -50,7 +50,7 @@ export const uiTemplate = ({
       'editorPane.background': primaryBackgroundColor,
       'editor.background': primaryBackgroundColor,
       'editor.foreground': basePalette.foreground,
-      'editor.selectionBackground': alpha(basePalette.selection, 0.6),
+      'editor.selectionBackground': alpha(colorPalette.amethyst, 0.3),
       'editor.selectionForeground': basePalette.foreground,
       'editor.inactiveSelectionBackground': alpha(basePalette.selection, 0.6),
       'editor.selectionHighlightBackground': alpha(basePalette.selection, 0.6),
@@ -65,17 +65,13 @@ export const uiTemplate = ({
       'editor.lineHighlightBorder': alpha(basePalette.selection, 0.5),
       'editor.rangeHighlightBackground': alpha(basePalette.selection, 0.5),
       'editorLineNumber.foreground':
-        shade === 'light'
-          ? basePalette.text
-          : getBaseColor(basePalette.textMid, basePalette.textDark),
-      'editorLineNumber.activeForeground':
-        shade === 'light' ? colorPalette[variant] : basePalette.foreground,
+        shade === 'light' ? basePalette.text : getBaseColor(basePalette.textMid, basePalette.textDark),
+      'editorLineNumber.activeForeground': shade === 'light' ? colorPalette[variant] : basePalette.foreground,
       'editorCursor.background': primaryBackgroundColor,
       'editorCursor.foreground': colorPalette[variant],
       'editorLink.activeForeground': colorPalette.lapis,
       'editorWhitespace.foreground': alpha(basePalette.selection, 0.5),
-      'editorIndentGuide.background':
-        shade === 'light' ? basePalette.selection : basePalette.selectionDark,
+      'editorIndentGuide.background': shade === 'light' ? basePalette.selection : basePalette.selectionDark,
       'editorIndentGuide.activeBackground': colorPalette[variant],
       'editorInlayHint.background': primaryBackgroundColor,
       'editorInlayHint.foreground': alpha(basePalette.selection, 0.99),
@@ -88,13 +84,9 @@ export const uiTemplate = ({
       'editorOverviewRuler.border': basePalette.selection,
       'editorOverviewRuler.findMatchForeground': colorPalette.lapis,
       'editorOverviewRuler.rangeHighlightForeground': basePalette.selection,
-      'editorOverviewRuler.selectionHighlightForeground': alpha(
-        basePalette.selection,
-        0.5
-      ),
+      'editorOverviewRuler.selectionHighlightForeground': alpha(basePalette.selection, 0.5),
       'editorOverviewRuler.wordHighlightForeground': basePalette.selection,
-      'editorOverviewRuler.wordHighlightStrongForeground':
-        basePalette.selection,
+      'editorOverviewRuler.wordHighlightStrongForeground': basePalette.selection,
       'editorOverviewRuler.modifiedForeground': colorPalette.lapis,
       'editorOverviewRuler.addedForeground': colorPalette.peridot,
       'editorOverviewRuler.deletedForeground': colorPalette.ruby,
@@ -198,31 +190,21 @@ export const uiTemplate = ({
 
       // List
       'list.activeSelectionBackground':
-        shade === 'light'
-          ? alpha(basePalette.selectionDark, 0.7)
-          : alpha(basePalette.selectionDark, 0.9),
+        shade === 'light' ? alpha(basePalette.selectionDark, 0.7) : alpha(basePalette.selectionDark, 0.9),
       'list.activeSelectionForeground': basePalette.foreground,
       'list.dropBackground':
-        shade === 'light'
-          ? alpha(basePalette.selectionDark, 0.7)
-          : alpha(basePalette.selectionDark, 0.9),
+        shade === 'light' ? alpha(basePalette.selectionDark, 0.7) : alpha(basePalette.selectionDark, 0.9),
       'list.focusBackground':
-        shade === 'light'
-          ? alpha(basePalette.selectionDark, 0.7)
-          : alpha(basePalette.selectionDark, 0.9),
+        shade === 'light' ? alpha(basePalette.selectionDark, 0.7) : alpha(basePalette.selectionDark, 0.9),
       'list.focusForeground': basePalette.foreground,
       'list.highlightForeground': basePalette.foreground,
       'list.hoverBackground': alpha(basePalette.selection, 0.5),
       'list.hoverForeground': basePalette.textMid,
       'list.inactiveSelectionBackground':
-        shade === 'light'
-          ? alpha(basePalette.selectionDark, 0.7)
-          : alpha(basePalette.selectionDark, 0.9),
+        shade === 'light' ? alpha(basePalette.selectionDark, 0.7) : alpha(basePalette.selectionDark, 0.9),
       'list.inactiveSelectionForeground': basePalette.foreground,
       'list.inactiveFocusBackground':
-        shade === 'light'
-          ? alpha(basePalette.selectionDark, 0.7)
-          : alpha(basePalette.selectionDark, 0.9),
+        shade === 'light' ? alpha(basePalette.selectionDark, 0.7) : alpha(basePalette.selectionDark, 0.9),
       'list.invalidItemForeground': colorPalette.ruby,
       'list.errorForeground': colorPalette.ruby,
       'list.warningForeground': colorPalette.amber,
@@ -236,22 +218,15 @@ export const uiTemplate = ({
       // Activity Bar
       'activityBar.background': primaryBackgroundColor,
       'activityBar.dropBorder': basePalette.selection,
-      'activityBar.foreground':
-        shade === 'light' ? colorPalette[variant] : basePalette.foreground,
-      'activityBar.inactiveForeground': getBaseColor(
-        basePalette.textMid,
-        basePalette.textDark
-      ),
+      'activityBar.foreground': shade === 'light' ? colorPalette[variant] : basePalette.foreground,
+      'activityBar.inactiveForeground': getBaseColor(basePalette.textMid, basePalette.textDark),
       'activityBar.border': primaryBackgroundColor,
       'activityBarBadge.background': colorPalette[variant],
       'activityBarBadge.foreground': primaryBackgroundColor,
 
       // Side Bar
       'sideBar.background': secondaryBackgroundColor,
-      'sideBar.foreground': getBaseColor(
-        basePalette.foreground,
-        basePalette.selection
-      ),
+      'sideBar.foreground': getBaseColor(basePalette.foreground, basePalette.selection),
       'sideBarTitle.foreground': colorPalette[variant],
       'sideBarSectionHeader.background': secondaryBackgroundColor,
       'sideBarSectionHeader.foreground': colorPalette[variant],
@@ -265,25 +240,16 @@ export const uiTemplate = ({
       'tab.activeBorderTop': colorPalette[variant],
       'tab.unfocusedActiveBorderTop': primaryBackgroundColor,
       'tab.inactiveBackground': secondaryBackgroundColor,
-      'tab.inactiveForeground': getBaseColor(
-        basePalette.textMid,
-        basePalette.textDark
-      ),
+      'tab.inactiveForeground': getBaseColor(basePalette.textMid, basePalette.textDark),
       'tab.unfocusedActiveForeground': basePalette.foreground,
-      'tab.unfocusedInactiveForeground': getBaseColor(
-        basePalette.textMid,
-        basePalette.textDark
-      ),
+      'tab.unfocusedInactiveForeground': getBaseColor(basePalette.textMid, basePalette.textDark),
       'tab.hoverForeground': colorPalette[variant],
 
       // Peek View
       'peekView.border': colorPalette[variant],
       'peekViewEditor.background': alpha(basePalette.selectionDark, 0.5),
       'peekViewEditorGutter.background': primaryBackgroundColor,
-      'peekViewEditor.matchHighlightBackground': alpha(
-        basePalette.selection,
-        0.5
-      ),
+      'peekViewEditor.matchHighlightBackground': alpha(basePalette.selection, 0.5),
       'peekViewEditor.matchHighlightBorder': basePalette.foreground,
       'peekViewResult.background': alpha(basePalette.selectionDark, 0.5),
       'peekViewResult.fileForeground': basePalette.foreground,
@@ -318,10 +284,7 @@ export const uiTemplate = ({
       'panel.dropBorder': basePalette.selection,
       'panelTitle.activeBorder': colorPalette[variant],
       'panelTitle.activeForeground': basePalette.foreground,
-      'panelTitle.inactiveForeground': getBaseColor(
-        basePalette.textMid,
-        basePalette.textDark
-      ),
+      'panelTitle.inactiveForeground': getBaseColor(basePalette.textMid, basePalette.textDark),
       'panelInput.border': basePalette.selection,
       'panelSection.border': basePalette.selection,
       'panelSection.dropBackground': basePalette.selection,
@@ -369,10 +332,7 @@ export const uiTemplate = ({
       // Extension Button
       'extensionButton.prominentBackground': colorPalette[variant],
       'extensionButton.prominentForeground': primaryBackgroundColor,
-      'extensionButton.prominentHoverBackground': alpha(
-        basePalette.selection,
-        0.5
-      ),
+      'extensionButton.prominentHoverBackground': alpha(basePalette.selection, 0.5),
 
       // Picker Group
       'pickerGroup.border': basePalette.selection,
@@ -416,16 +376,13 @@ export const uiTemplate = ({
       'gitDecoration.deletedResourceForeground': colorPalette.ruby,
       'gitDecoration.untrackedResourceForeground': colorPalette.peridot,
       'gitDecoration.ignoredResourceForeground':
-        baseVariant === 'default'
-          ? basePalette.selection
-          : basePalette.selectionDark,
+        baseVariant === 'default' ? basePalette.selection : basePalette.selectionDark,
       'gitDecoration.conflictingResourceForeground': colorPalette.ruby,
 
       // Settings
       'settings.headerForeground': basePalette.foreground,
       'settings.modifiedItemIndicator': colorPalette[variant],
-      'settings.dropdownBackground':
-        shade === 'light' ? basePalette.selection : basePalette.selectionDark,
+      'settings.dropdownBackground': shade === 'light' ? basePalette.selection : basePalette.selectionDark,
       'settings.dropdownForeground': basePalette.foreground,
       'settings.dropdownBorder': basePalette.selectionDark,
       'settings.dropdownListBorder': basePalette.selectionDark,
@@ -458,10 +415,7 @@ export const uiTemplate = ({
         scope: ['comment', 'punctuation.definition.comment'],
         settings: {
           fontStyle: 'italic',
-          foreground:
-            shade === 'light'
-              ? basePalette.text
-              : getBaseColor(basePalette.textMid, basePalette.textDark),
+          foreground: shade === 'light' ? basePalette.text : getBaseColor(basePalette.textMid, basePalette.textDark),
         },
       },
       {
@@ -725,10 +679,7 @@ export const uiTemplate = ({
       },
       {
         name: 'meta.method.js',
-        scope: [
-          'meta.class-method.js entity.name.function.js',
-          'variable.function.constructor',
-        ],
+        scope: ['meta.class-method.js entity.name.function.js', 'variable.function.constructor'],
         settings: {
           foreground: colorPalette.ruby,
         },
@@ -742,20 +693,14 @@ export const uiTemplate = ({
       },
       {
         name: 'HTML Attributes',
-        scope: [
-          'text.html.basic entity.other.attribute-name.html',
-          'text.html.basic entity.other.attribute-name',
-        ],
+        scope: ['text.html.basic entity.other.attribute-name.html', 'text.html.basic entity.other.attribute-name'],
         settings: {
           foreground: colorPalette.aquamarine,
         },
       },
       {
         name: 'CSS Classes',
-        scope: [
-          'entity.other.attribute-name.class',
-          'punctuation.definition.entity.css',
-        ],
+        scope: ['entity.other.attribute-name.class', 'punctuation.definition.entity.css'],
         settings: {
           foreground: colorPalette.aquamarine,
         },
@@ -811,20 +756,14 @@ export const uiTemplate = ({
       },
       {
         name: 'Decorators',
-        scope: [
-          'meta.decorator',
-          'tag.decorator.js entity.name.tag',
-          'tag.decorator.js punctuation.definition.tag',
-        ],
+        scope: ['meta.decorator', 'tag.decorator.js entity.name.tag', 'tag.decorator.js punctuation.definition.tag'],
         settings: {
           foreground: colorPalette.ruby,
         },
       },
       {
         name: 'ES7 Bind Operator',
-        scope: [
-          'source.js constant.other.object.key.js string.unquoted.label.js',
-        ],
+        scope: ['source.js constant.other.object.key.js string.unquoted.label.js'],
         settings: {
           fontStyle: 'italic',
           foreground: colorPalette.ruby,
@@ -832,9 +771,7 @@ export const uiTemplate = ({
       },
       {
         name: 'JSON Key - Level 0',
-        scope: [
-          'source.json meta.structure.dictionary.json support.type.property-name.json',
-        ],
+        scope: ['source.json meta.structure.dictionary.json support.type.property-name.json'],
         settings: {
           foreground: colorPalette.ruby,
         },
@@ -967,20 +904,14 @@ export const uiTemplate = ({
       },
       {
         name: 'Markdown - Plain',
-        scope: [
-          'text.html.markdown',
-          'punctuation.definition.list_item.markdown',
-        ],
+        scope: ['text.html.markdown', 'punctuation.definition.list_item.markdown'],
         settings: {
           foreground: basePalette.foreground,
         },
       },
       {
         name: 'Markdown - Markup Raw Inline',
-        scope: [
-          'text.html.markdown markup.raw.inline',
-          'text.html.markdown markup.inline.raw.string.markdown',
-        ],
+        scope: ['text.html.markdown markup.raw.inline', 'text.html.markdown markup.inline.raw.string.markdown'],
         settings: {
           foreground: colorPalette.ruby,
         },
@@ -1030,10 +961,7 @@ export const uiTemplate = ({
       },
       {
         name: 'Markdown - Fenced Bode Block',
-        scope: [
-          'punctuation.definition.fenced.markdown',
-          'variable.language.fenced.markdown',
-        ],
+        scope: ['punctuation.definition.fenced.markdown', 'variable.language.fenced.markdown'],
         settings: {
           foreground: basePalette.foreground,
         },
