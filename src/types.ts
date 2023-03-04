@@ -22,14 +22,7 @@ export type ColorPalette = {
 
 export type BaseVariant = 'default' | 'stealth';
 
-export type Variant =
-  | 'lapis'
-  | 'amethyst'
-  | 'ruby'
-  | 'amber'
-  | 'peridot'
-  | 'aquamarine'
-  | 'quartz';
+export type Variant = 'lapis' | 'amethyst' | 'ruby' | 'amber' | 'peridot' | 'aquamarine' | 'quartz';
 
 export type Shade = 'default' | 'dark' | 'light';
 
@@ -38,4 +31,5 @@ export type Theme = {
   baseVariant: BaseVariant;
   variant: Variant;
   shade?: Shade;
+  italics?: boolean;
 };

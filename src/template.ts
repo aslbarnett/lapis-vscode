@@ -1,17 +1,7 @@
 import { alpha, generateColorPalette } from './helpers';
-import { Shade, BaseVariant, Variant } from './types';
+import { Theme } from './types';
 
-export const uiTemplate = ({
-  name,
-  baseVariant,
-  variant,
-  shade,
-}: {
-  name: string;
-  baseVariant: BaseVariant;
-  variant: Variant;
-  shade?: Shade;
-}) => {
+export const uiTemplate = ({ name, baseVariant, variant, shade, italics }: Theme) => {
   const {
     basePalette,
     colorPalette,
@@ -19,6 +9,7 @@ export const uiTemplate = ({
     primaryBgColor: primaryBackgroundColor,
     secondaryBgColor: secondaryBackgroundColor,
   } = generateColorPalette(shade);
+  const italicStyle = italics && { fontStyle: 'italic' };
 
   function getBaseColor(defaultColor: string, stealthColor: string): string {
     return baseVariant === 'stealth' ? stealthColor : defaultColor;
