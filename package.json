@@ -83,7 +83,7 @@
         "path": "./themes/lapis-color-theme.json"
       },
       {
-        "label": "Lapis with italics",
+        "label": "Lapis with Italics",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-italic-color-theme.json"
       },
