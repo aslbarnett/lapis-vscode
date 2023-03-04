@@ -2,7 +2,7 @@
   "name": "lapis-vscode",
   "displayName": "Lapis",
   "description": "A dark blue theme & light blue theme for Visual Studio Code.",
-  "version": "1.6.23",
+  "version": "1.6.24",
   "author": {
     "name": "Alex Barnett",
     "email": "aslbarnett@gmail.com"
@@ -81,6 +81,11 @@
         "label": "Lapis",
         "uiTheme": "vs-dark",
         "path": "./themes/lapis-color-theme.json"
+      },
+      {
+        "label": "Lapis with Italics",
+        "uiTheme": "vs-dark",
+        "path": "./themes/lapis-italic-color-theme.json"
       },
       {
         "label": "Lapis (stealth version)",
