@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.7.0"
+
+- Add Lapis with Italics variant.
+
 ## "1.6.23"
 
 - Update highlight color.
