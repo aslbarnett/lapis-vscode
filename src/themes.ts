@@ -10,7 +10,7 @@ const themeMap = [
 	{ label: 'lapis-quartz', alias: 'lapis-onyx', color: 'quartz' },
 ];
 
-const variants = ['default', 'stealth', 'dark', 'dark-stealth', 'light', 'italic'];
+const variants = ['default', 'stealth', 'dark', 'dark-stealth', 'light', 'italic', 'light-italic'];
 
 export const themes: Array<Theme> = [
 	...themeMap
@@ -23,7 +23,7 @@ export const themes: Array<Theme> = [
 				variant: color as Variant,
 				...(variant.includes('dark') && { shade: 'dark' as Shade }),
 				...(variant.includes('light') && { shade: 'light' as Shade }),
-				italics: variant === 'italic',
+				italics: variant.includes('italic'),
 			}));
 		})
 		.reduce((acc, curr) => [...acc, ...curr], []),
