@@ -151,7 +151,7 @@ export const uiTemplate = ({ name, baseVariant, variant, shade, italics }: Theme
 			'input.background': primaryBackgroundColor,
 			'input.border': basePalette.selection,
 			'input.foreground': basePalette.foreground,
-			'input.placeholderForeground': alpha(basePalette.selection, 0.5),
+			'input.placeholderForeground': basePalette.textMid,
 			'inputOption.activeBorder': basePalette.selection,
 
 			// Input Validation

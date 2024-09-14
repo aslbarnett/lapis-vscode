@@ -2,6 +2,9 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.8.1"
+- Fix text color for ports panel.
+
 ## "1.8.0"
 
 - Add Lapis Light Theme with Italics variant.
