@@ -3,7 +3,7 @@
 All notable changes to the "lapis" extension will be documented in this file.
 
 ## "1.8.1"
-- Fix text color for ports panel.
+- Fix text color for placeholder text.
 
 ## "1.8.0"
 
