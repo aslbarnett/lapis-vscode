@@ -2,6 +2,10 @@
 
 All notable changes to the "lapis" extension will be documented in this file.
 
+## "1.8.3"
+- Bump version.
+- Update dependencies.
+
 ## "1.8.2"
 - Bump version.
 - Update dependencies.
