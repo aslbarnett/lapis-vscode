@@ -1,3 +1,5 @@
 *.vsix
 node_modules
 .idea
+CLAUDE.md
+context
